@@ -24,19 +24,19 @@
 		"uuid": "402f3886-53c0-41fc-9d57-a337ccb70f56",
 		"version": [
 			1,
-			0,
-			0
+			21,
+			80
 		]
 	},
 	"modules": [
 		{
 			"type": "resources",
 			"uuid": "0f7b1fc7-ccda-410e-858a-66983fb070c5",
-			"version": [
-				1,
-				0,
-				0
-			]
+		"version": [
+			1,
+			21,
+			80
+		]
 		}
 	],
 	"dependencies": [

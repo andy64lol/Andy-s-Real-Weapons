@@ -1,18 +1,33 @@
 {
-	"format_version": "1.20.80",
-	"minecraft:block": {
-		"description": {
-			"identifier": "arw:jade_mineral",
-			"menu_category": {
-				"category": "construction"
-			}
-		},
-		"components": {
-			"minecraft:light_dampening": 1,
-			"minecraft:destructible_by_mining": true,
-			"minecraft:destructible_by_explosion": true,
-			"minecraft:block_sounds": "stone",
-			"minecraft:map_color": "#00c870"
-		}
-	}
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "arw:jade_mineral",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:light_dampening": 1,
+      "minecraft:light_emission": 4,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 3.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0
+      },
+      "minecraft:map_color": "#00c870",
+      "minecraft:required_tool": {
+        "tool_type": "pickaxe",
+        "tier": 3
+      },
+      "minecraft:block_sounds": {
+        "placement_sound": "stone.place",
+        "break_sound": "stone.break",
+        "step_sound": "stone.step",
+        "hit_sound": "stone.hit",
+        "fall_sound": "stone.fall"
+      }
+    }
+  }
 }

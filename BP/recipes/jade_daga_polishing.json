@@ -1,21 +1,28 @@
 {
-	"format_version": "1.12",
-	"minecraft:recipe_shapeless": {
-		"description": {
-			"identifier": "arw:jade_daga_polishing"
-		},
-		"tags": [],
-		"ingredients": [
-			{
-				"item": "arw:jade_daga_dull"
-			},
-			{
-				"item": "arw:iron_daga"
-			}
-		],
-		"result": {
-			"item": "arw:jade_daga",
-			"count": 1
-		}
-	}
+    "format_version": "1.21.80",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "arw:jade_daga_polishing"
+        },
+        "ingredients": [
+            {
+                "item": "arw:jade_daga_dull"
+            },
+            {
+                "item": "arw:iron_daga"
+            }
+        ],
+        "result": {
+            "item": "arw:jade_daga",
+            "count": 1
+        },
+        "unlock": {
+            "context": "player",
+            "criteria": [
+                {
+                    "item": "arw:jade_daga_dull"
+                }
+            ]
+        }
+  }
 }

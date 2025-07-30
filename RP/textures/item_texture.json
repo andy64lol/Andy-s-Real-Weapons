@@ -1,0 +1,78 @@
+{
+	"resource_pack_name": "Andy's Real Weapons",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"arw_flint_daga": {
+			"textures": "textures/items/flint_daga"
+		},
+		"arw_iron_daga": {
+			"textures": "textures/items/iron_daga"
+		},
+		"arw_netherite_daga": {
+			"textures": "textures/items/netherite_daga"
+		},
+		"arw_iron_stick": {
+			"textures": "textures/items/iron_stick"
+		},
+		"arw_gold_daga": {
+			"textures": "textures/items/gold_daga"
+		},
+		"arw_sacrificial_daga": {
+			"textures": "textures/items/sacrificial_daga"
+		},
+		"arw_cursed_netherite_ingot": {
+			"textures": "textures/items/cursed_netherite_ingot"
+		},
+		"arw_iron_kris": {
+			"textures": "textures/items/iron_kris"
+		},
+		"arw_gold_kris": {
+			"textures": "textures/items/gold_kris"
+		},
+		"arw_netherite_kris": {
+			"textures": "textures/items/netherite_kris"
+		},
+		"arw_royal_kris": {
+			"textures": "textures/items/royal_kris"
+		},
+		"arw_steel_poleaxe": {
+			"textures": "textures/items/steel_poleaxe"
+		},
+		"arw_iron_katana": {
+			"textures": "textures/items/iron_katana"
+		},
+		"arw_diamond_katana": {
+			"textures": "textures/items/diamond_katana"
+		},
+		"arw_steel_katana": {
+			"textures": "textures/items/steel_katana"
+		},
+		"arw_steel_ingot": {
+			"textures": "textures/items/steel_ingot"
+		},
+		"arw_netherite_poleaxe": {
+			"textures": "textures/items/netherite_poleaxe"
+		},
+		"arw_flint_spear": {
+			"textures": "textures/items/flint_spear"
+		},
+		"arw_amethyst_spear": {
+			"textures": "textures/items/amethyst_spear"
+		},
+		"arw_steel_spear": {
+			"textures": "textures/items/steel_spear"
+		},
+		"arw_jade_gem_brute": {
+			"textures": "textures/items/jade_gem_brute"
+		},
+		"arw_jade_gem": {
+			"textures": "textures/items/jade_gem"
+		},
+		"arw_jade_daga": {
+			"textures": "textures/items/jade_daga"
+		},
+		"arw_jade_daga_dull": {
+			"textures": "textures/items/jade_daga_dull"
+		}
+	}
+}

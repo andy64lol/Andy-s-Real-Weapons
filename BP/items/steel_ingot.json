@@ -1,0 +1,15 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:steel_ingot",
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.ingot"
+			}
+		},
+		"components": {
+			"minecraft:icon": "arw_steel_ingot"
+		}
+	}
+}

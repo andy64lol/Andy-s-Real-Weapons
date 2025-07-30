@@ -1,0 +1,23 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:jade_daga_dull"
+		},
+		"tags": [],
+		"pattern": [
+			"   ",
+			" j ",
+			"j  "
+		],
+		"key": {
+			"j": {
+				"item": "arw:jade_gem"
+			}
+		},
+		"result": {
+			"item": "arw:jade_daga_dull",
+			"count": 1
+		}
+	}
+}

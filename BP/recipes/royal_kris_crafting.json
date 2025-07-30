@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:royal_kris_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" II",
+			"EI ",
+			"G  "
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"G": {
+				"item": "minecraft:gold_ingot"
+			},
+			"E": {
+				"item": "minecraft:emerald"
+			}
+		},
+		"result": {
+			"item": "arw:royal_kris",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:netherite_daga_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"N",
+			"S"
+		],
+		"key": {
+			"N": {
+				"item": "minecraft:netherite_ingot"
+			},
+			"S": {
+				"item": "arw:iron_stick"
+			}
+		},
+		"result": {
+			"item": "arw:netherite_daga",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:gold_kris_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" GG",
+			"GG ",
+			"S  "
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:gold_ingot"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:gold_kris",
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:gold_kris_recipe"
+			],
+			"items": [
+				"minecraft:gold_ingot"
+			]
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:flint_daga_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"F",
+			"S",
+			"W"
+		],
+		"key": {
+			"F": {
+				"item": "minecraft:flint"
+			},
+			"S": {
+				"item": "minecraft:string"
+			},
+			"W": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:flint_daga",
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:flint_daga_recipe"
+			],
+			"items": [
+				"minecraft:flint"
+			]
+		}
+	}
+}

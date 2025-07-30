@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:steel_poleaxe_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" OI",
+			" OI",
+			"O  "
+		],
+		"key": {
+			"I": {
+				"item": "arw:steel_ingot"
+			},
+			"O": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:steel_poleaxe",
+			"count": 1
+		}
+	}
+}

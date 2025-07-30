@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:steel_spear_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"  I",
+			" T ",
+			"T  "
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"T": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:steel_spear",
+			"count": 1
+		}
+	}
+}

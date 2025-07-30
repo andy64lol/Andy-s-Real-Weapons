@@ -1,0 +1,37 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:iron_katana_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"  I",
+			" II",
+			"S  "
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:iron_katana",
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:iron_katana_recipe"
+			],
+			"items": [
+				"minecraft:iron_ingot"
+			]
+		}
+	}
+}

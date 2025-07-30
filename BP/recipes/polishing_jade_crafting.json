@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:polishing_jade_crafting"
+		},
+		"tags": [],
+		"pattern": [
+			"GGG",
+			"GIG",
+			"GGG"
+		],
+		"key": {
+			"G": {
+				"item": "arw:jade_gem_brute"
+			},
+			"I": {
+				"item": "arw:iron_daga"
+			}
+		},
+		"result": {
+			"item": "arw:jade_gem",
+			"count": 8
+		}
+	}
+}

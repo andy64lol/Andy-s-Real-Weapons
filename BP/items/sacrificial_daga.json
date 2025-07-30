@@ -1,0 +1,46 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:sacrificial_daga",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:durability": {
+				"max_durability": 2000
+			},
+			"minecraft:icon": "arw_sacrificial_daga",
+			"minecraft:damage": 12,
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"arw:cursed_netherite_ingot"
+						],
+						"repair_amount": "query.max_durability*1"
+					}
+				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:is_tool"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "§5Sacrificial Daga"
+			},
+			"minecraft:lore": [
+				"§7A daga made using lost souls,",
+				"§7cursed for eternity,",
+				"§7bound by the wielder's own blood sacrifice..."
+			]
+		}
+	}
+}

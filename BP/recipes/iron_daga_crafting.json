@@ -1,0 +1,36 @@
+{
+	"format_version": "1.21.70",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:iron_daga_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"I",
+			"W"
+		],
+		"key": {
+			"I": {
+				"item": "minecraft:iron_ingot"
+			},
+			"W": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:iron_daga",
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:iron_daga_recipe"
+			],
+			"items": [
+				"minecraft:iron_ingot"
+			]
+		}
+	}
+}

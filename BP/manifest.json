@@ -1,0 +1,83 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"andy64lol"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.48"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "Andy's Real Weapons",
+		"description": "This add-on adds new weapons.",
+		"min_engine_version": [
+			1,
+			21,
+			80
+		],
+		"uuid": "b3ad18f3-adee-4be9-bc7c-69babe99208f",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "8330259d-312d-4186-884e-84cef61c0306",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "d70e2bb5-9caf-4d4d-bde7-abb3445f278a",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "402f3886-53c0-41fc-9d57-a337ccb70f56",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.7.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-gametest",
+			"version": "1.7.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.7.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-admin",
+			"version": "1.7.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-net",
+			"version": "1.7.0-beta"
+		}
+	]
+}

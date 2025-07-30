@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:netherite_kris_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" NN",
+			"NN ",
+			"S  "
+		],
+		"key": {
+			"N": {
+				"item": "minecraft:netherite_ingot"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:netherite_kris",
+			"count": 1
+		}
+	}
+}

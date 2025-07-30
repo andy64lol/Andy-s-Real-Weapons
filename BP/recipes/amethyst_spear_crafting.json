@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:amethyst_spear_recipe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"  L",
+			" T ",
+			"T  "
+		],
+		"key": {
+			"L": {
+				"item": "minecraft:amethyst_shard"
+			},
+			"T": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:amethyst_spear",
+			"count": 1
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "arw:steel_claymore_recipe"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      " S ",
+      " B ",
+      " T "
+    ],
+    "key": {
+      "S": {
+        "item": "arw:steel_ingot"
+      },
+      "B": {
+        "item": "arw:steel_block"
+      },
+      "T": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "arw:steel_claymore",
+      "count": 1
+    },
+    "unlock": {
+      "context": "player",
+      "recipes": [
+        "arw:steel_claymore_recipe"
+      ],
+      "items": [
+        "arw:steel_ingot",
+        "arw:steel_block",
+        "minecraft:stick"
+      ]
+    }
+  }
+}

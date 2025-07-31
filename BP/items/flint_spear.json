@@ -1,11 +1,11 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
 			"identifier": "arw:flint_spear",
 			"menu_category": {
 				"category": "equipment",
-				"group": "itemGroup.name.sword"
+				"group": "minecraft:itemGroup.name.sword"
 			}
 		},
 		"components": {

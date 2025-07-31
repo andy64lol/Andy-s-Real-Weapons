@@ -2,9 +2,6 @@
 	"texture_data": {
 		"arw_jade_mineral": {
 			"textures": "textures/blocks/jade_mineral_block"
-		},
-		"arw_iron_claymore": {
-			"textures": "textures/blocks/iron_claymore"
 		}
 	}
 }

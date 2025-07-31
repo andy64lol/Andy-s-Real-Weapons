@@ -1,11 +1,11 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
 			"identifier": "arw:steel_poleaxe",
 			"menu_category": {
 				"category": "equipment",
-				"group": "itemGroup.name.sword"
+				"group": "minecraft:itemGroup.name.sword"
 			}
 		},
 		"components": {
@@ -15,9 +15,7 @@
 			"minecraft:durability": {
 				"max_durability": 750
 			},
-			"minecraft:icon": {
-				"texture": "arw_steel_poleaxe"
-			},
+			"minecraft:icon": "arw_steel_poleaxe",
 			"minecraft:damage": 9,
 			"minecraft:enchantable": {
 				"value": 18,

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "arw:steel_block",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:light_dampening": 1,
+      "minecraft:light_emission": 0,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 5.0
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 15
+      },
+      "minecraft:map_color": "#a0a0a0",
+      "minecraft:required_tool": {
+        "tool_type": "pickaxe",
+        "tier": 2
+      },
+      "minecraft:block_sounds": {
+        "placement_sound": "stone.place",
+        "break_sound": "stone.break",
+        "step_sound": "stone.step",
+        "hit_sound": "stone.hit",
+        "fall_sound": "stone.fall"
+      }
+    }
+  }
+}

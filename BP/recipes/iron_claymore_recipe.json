@@ -26,6 +26,21 @@
 		"result": {
 			"item": "arw:iron_claymore",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"criteria": [
+				{
+					"trigger": "minecraft:inventory_changed",
+					"conditions": {
+						"items": [
+							{
+								"item": "minecraft:iron_ingot"
+							}
+						]
+					}
+				}
+			]
 		}
 	}
 }

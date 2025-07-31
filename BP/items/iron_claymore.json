@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
-			"identifier": "arw:amethyst_spear",
+			"identifier": "arw:iron_claymore",
 			"menu_category": {
 				"category": "equipment",
 				"group": "minecraft:itemGroup.name.sword"
@@ -13,27 +13,27 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:durability": {
-				"max_durability": 400
+				"max_durability": 203
 			},
-			"minecraft:icon": "arw_amethyst_spear",
-			"minecraft:damage": 8,
+			"minecraft:icon": "arw_iron_claymore",
+			"minecraft:damage": 6,
 			"minecraft:enchantable": {
-				"value": 22,
+				"value": 12,
 				"slot": "sword"
 			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{
 						"items": [
-							"minecraft:amethyst_shard"
+							"minecraft:iron_ingot"
 						],
-						"repair_amount": "query.max_durability*0.2"
+						"repair_amount": "query.max_durability * 0.25"
 					},
 					{
 						"items": [
-							"arw:amethyst_spear"
+							"arw:iron_claymore"
 						],
-						"repair_amount": "context.other->query.remaining_durability+0.1*context.other->query.max_durability"
+						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
 					}
 				]
 			},

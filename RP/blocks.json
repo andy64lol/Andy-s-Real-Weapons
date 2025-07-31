@@ -1,5 +1,8 @@
 {
-  "format_version": "1.21.80",
-  "minecraft:block": {
-  }
+	"format_version": "1.21.80",
+	"minecraft:block": {},
+	"arw:iron_claymore": {
+		"sound": "stone",
+		"textures": "arw_iron_claymore"
+	}
 }

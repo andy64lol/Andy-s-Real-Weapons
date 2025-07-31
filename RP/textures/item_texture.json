@@ -73,6 +73,12 @@
 		},
 		"arw_jade_daga_dull": {
 			"textures": "textures/items/jade_daga_dull"
+		},
+		"arw_steel_claymore": {
+			"textures": "textures/items/steel_claymore"
+		},
+		"arw_iron_claymore": {
+			"textures": "textures/items/iron_claymore"
 		}
 	}
 }

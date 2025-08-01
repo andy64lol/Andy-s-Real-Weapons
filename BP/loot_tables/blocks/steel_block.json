@@ -1,0 +1,27 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "conditions": [
+                {
+                    "condition": "match_tool",
+                    "predicate": {
+                        "item_tags": [
+                            "minecraft:is_pickaxe"
+                        ],
+                        "tier": {
+                            "min": 2
+                        }
+                    }
+                }
+            ],
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "arw:steel_block",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

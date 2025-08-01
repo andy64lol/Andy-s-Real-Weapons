@@ -5,7 +5,7 @@
 			"identifier": "arw:flint_spear",
 			"menu_category": {
 				"category": "equipment",
-				"group": "minecraft:minecraft:itemGroup.name.sword"
+				"group": "minecraft:itemGroup.name.sword"
 			}
 		},
 		"components": {

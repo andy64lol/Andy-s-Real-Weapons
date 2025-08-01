@@ -32,21 +32,21 @@
 		{
 			"type": "data",
 			"uuid": "8330259d-312d-4186-884e-84cef61c0306",
-		"version": [
-			1,
-			21,
-			80
-		]
+			"version": [
+				1,
+				21,
+				80
+			]
 		}
 	],
 	"dependencies": [
 		{
 			"uuid": "402f3886-53c0-41fc-9d57-a337ccb70f56",
-		"version": [
-			1,
-			21,
-			80
-		]
+			"version": [
+				1,
+				21,
+				80
+			]
 		}
 	]
 }

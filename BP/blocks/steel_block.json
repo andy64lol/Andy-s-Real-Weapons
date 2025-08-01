@@ -27,6 +27,13 @@
         "step_sound": "stone.step",
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
+      },
+      "minecraft:loot": "loot_tables/blocks/steel_block.json",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "arw_steel_block",
+          "render_method": "opaque"
+        }
       }
     }
   }

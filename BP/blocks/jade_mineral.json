@@ -14,19 +14,26 @@
         "seconds_to_destroy": 3.0
       },
       "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 0
+        "explosion_resistance": 6.0
       },
       "minecraft:map_color": "#00c870",
       "minecraft:required_tool": {
         "tool_type": "pickaxe",
         "tier": 3
       },
+      "minecraft:loot": "loot_tables/blocks/jade_mineral.json",
       "minecraft:block_sounds": {
         "placement_sound": "stone.place",
         "break_sound": "stone.break",
         "step_sound": "stone.step",
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "arw_jade_mineral",
+          "render_method": "opaque"
+        }
       }
     }
   }

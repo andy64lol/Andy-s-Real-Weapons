@@ -1,53 +1,17 @@
 {
-	"format_version": "1.20.80",
-	"minecraft:feature_rules": {
+	"format_version": "1.21.80",
+	"minecraft:ore_feature": {
 		"description": {
-			"identifier": "arw:overworld_underground_jade_ore",
-			"places_feature": "arw:jade_ore_feature"
+			"identifier": "arw:jade_mineral_feature"
 		},
-		"conditions": {
-			"placement_pass": "underground_pass",
-			"minecraft:biome_filter": [
-				{
-					"any_of": [
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "bamboo"
-						},
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "warm"
-						}
-					]
-				}
-			]
-		},
-		"distribution": {
-			"iterations": 1,
-			"coordinate_eval_order": "zyx",
-			"x": {
-				"distribution": "uniform",
-				"extent": [
-					0,
-					16
-				]
-			},
-			"y": {
-				"distribution": "uniform",
-				"extent": [
-					5,
-					30
-				]
-			},
-			"z": {
-				"distribution": "uniform",
-				"extent": [
-					0,
-					16
+		"count": 1,
+		"replace_rules": [
+			{
+				"places_block": "arw:jade_mineral",
+				"may_replace": [
+					"minecraft:stone"
 				]
 			}
-		}
+		]
 	}
 }

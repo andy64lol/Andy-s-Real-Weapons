@@ -79,6 +79,15 @@
 		},
 		"arw_iron_claymore": {
 			"textures": "textures/items/iron_claymore"
+		},
+		"arw_iron_estoc": {
+			"textures": "textures/items/iron_estoc"
+		},
+		"arw_steel_estoc": {
+			"textures": "textures/items/steel_estoc"
+		},
+		"arw_imperial_estoc": {
+			"textures": "textures/items/imperial_estoc"
 		}
 	}
 }

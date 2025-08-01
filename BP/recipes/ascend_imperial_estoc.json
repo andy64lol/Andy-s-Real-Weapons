@@ -1,0 +1,45 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:ascend_imperial_estoc"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"ELE",
+			"GSG",
+			"ELE"
+		],
+		"key": {
+			"E": {
+				"item": "minecraft:emerald"
+			},
+			"S": {
+				"item": "arw:steel_estoc"
+			},
+			"G": {
+				"item": "minecraft:gold_ingot"
+			},
+			"L": {
+				"item": "minecraft:lapis_lazuli"
+			}
+		},
+		"result": {
+			"item": "arw:imperial_estoc",
+			"count": 1
+		},
+		"unlock": {
+			"recipes": [
+				"arw:ascend_imperial_estoc"
+			],
+			"items": [
+				"arw:steel_estoc",
+				"minecraft:emerald",
+				"minecraft:gold_ingot",
+				"minecraft:lapis_lazuli"
+			]
+		}
+	}
+}

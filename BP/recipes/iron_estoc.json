@@ -2,31 +2,31 @@
 	"format_version": "1.21.80",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "arw:iron_to_steel_ingot_upgrade"
+			"identifier": "arw:iron_estoc"
 		},
 		"tags": [
 			"crafting_table"
 		],
 		"pattern": [
-			"CCC",
-			"CIC",
-			"CCC"
+			" I ",
+			" I ",
+			" S "
 		],
 		"key": {
 			"I": {
 				"item": "minecraft:iron_ingot"
 			},
-			"C": {
-				"item": "minecraft:coal"
+			"S": {
+				"item": "arw:iron_stick"
 			}
 		},
 		"result": {
-			"item": "arw:steel_ingot",
+			"item": "arw:iron_estoc",
 			"count": 1
 		},
 		"unlock": {
 			"recipes": [
-				"arw:iron_to_steel_ingot_upgrade"
+				"arw:iron_estoc"
 			],
 			"items": [
 				"minecraft:iron_ingot",

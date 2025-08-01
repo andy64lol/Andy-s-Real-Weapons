@@ -1,11 +1,11 @@
 {
-	"format_version": "1.21.0",
+	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
 			"identifier": "arw:royal_kris",
 			"menu_category": {
 				"category": "equipment",
-				"group": "itemGroup.name.sword"
+				"group": "minecraft:itemGroup.name.sword"
 			},
 			"custom_item_name": {
 				"value": "§6§lRoyal Kris"

@@ -21,22 +21,6 @@
 				"value": 22,
 				"slot": "sword"
 			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:amethyst_shard"
-						],
-						"repair_amount": "query.max_durability*0.2"
-					},
-					{
-						"items": [
-							"arw:amethyst_spear"
-						],
-						"repair_amount": "context.other->query.remaining_durability+0.1*context.other->query.max_durability"
-					}
-				]
-			},
 			"minecraft:tags": {
 				"tags": [
 					"minecraft:is_sword",

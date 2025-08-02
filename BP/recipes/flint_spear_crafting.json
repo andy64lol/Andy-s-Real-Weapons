@@ -26,6 +26,17 @@
 		"result": {
 			"item": "arw:flint_spear",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:flint_spear_recipe"
+			],
+			"items": [
+				"minecraft:flint",
+				"minecraft:string",
+				"minecraft:stick"
+			]
 		}
 	}
 }

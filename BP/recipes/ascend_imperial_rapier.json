@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "arw:ascend_imperial_estoc"
+			"identifier": "arw:ascend_imperial_rapier"
 		},
 		"tags": [
 			"crafting_table"
@@ -17,7 +17,7 @@
 				"item": "minecraft:emerald"
 			},
 			"S": {
-				"item": "arw:steel_estoc"
+				"item": "arw:steel_rapier"
 			},
 			"G": {
 				"item": "minecraft:gold_ingot"
@@ -27,15 +27,15 @@
 			}
 		},
 		"result": {
-			"item": "arw:imperial_estoc",
+			"item": "arw:imperial_rapier",
 			"count": 1
 		},
 		"unlock": {
 			"recipes": [
-				"arw:ascend_imperial_estoc"
+				"arw:ascend_imperial_rapier"
 			],
 			"items": [
-				"arw:steel_estoc",
+				"arw:steel_rapier",
 				"minecraft:emerald",
 				"minecraft:gold_ingot",
 				"minecraft:lapis_lazuli"

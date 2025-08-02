@@ -4,5 +4,13 @@
 	"arw:iron_claymore": {
 		"sound": "stone",
 		"textures": "arw_iron_claymore"
+	},
+	"arw:steel_block": {
+		"sound": "stone",
+		"textures": "arw_steel_block"
+	},
+	"arw:jade_mineral": {
+		"sound": "stone",
+		"textures": "arw_jade_mineral"
 	}
 }

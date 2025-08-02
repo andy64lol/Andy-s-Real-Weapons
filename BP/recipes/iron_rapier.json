@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "arw:iron_estoc"
+			"identifier": "arw:iron_rapier"
 		},
 		"tags": [
 			"crafting_table"
@@ -21,12 +21,13 @@
 			}
 		},
 		"result": {
-			"item": "arw:iron_estoc",
+			"item": "arw:iron_rapier",
 			"count": 1
 		},
 		"unlock": {
+			"context": "survival",
 			"recipes": [
-				"arw:iron_estoc"
+				"arw:iron_rapier"
 			],
 			"items": [
 				"minecraft:iron_ingot",

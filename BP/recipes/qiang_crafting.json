@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:qiang_recipe"
+		},
+		"tags": [],
+		"pattern": [
+			"  I",
+			" SR",
+			"S  "
+		],
+		"key": {
+			"I": {
+				"item": "arw:steel_ingot"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			},
+			"R": {
+				"item": "minecraft:red_wool"
+			}
+		},
+		"result": {
+			"item": "arw:qiang",
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:qiang_recipe"
+			],
+			"items": [
+				"arw:steel_ingot",
+				"minecraft:stick",
+				"minecraft:red_wool"
+			]
+		}
+	}
+}

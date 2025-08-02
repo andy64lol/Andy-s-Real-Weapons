@@ -1,0 +1,38 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:steel_rapier"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" S ",
+			" S ",
+			" I "
+		],
+		"key": {
+			"S": {
+				"item": "arw:steel_ingot"
+			},
+			"I": {
+				"item": "arw:iron_stick"
+			}
+		},
+		"result": {
+			"item": "arw:steel_rapier",
+			"count": 1
+		},
+		"unlock": {
+			"context": "crafting_table",
+			"recipes": [
+				"arw:steel_rapier"
+			],
+			"items": [
+				"arw:steel_ingot",
+				"arw:iron_stick"
+			]
+		}
+	}
+}

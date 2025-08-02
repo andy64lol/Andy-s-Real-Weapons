@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
-			"identifier": "arw:steel_estoc",
+			"identifier": "arw:qiang",
 			"menu_category": {
 				"category": "equipment",
 				"group": "minecraft:itemGroup.name.sword"
@@ -13,27 +13,27 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:durability": {
-				"max_durability": 320
+				"max_durability": 800
 			},
-			"minecraft:icon": "arw_steel_estoc",
-			"minecraft:damage": 7,
+			"minecraft:icon": "arw_qiang",
+			"minecraft:damage": 9,
 			"minecraft:enchantable": {
-				"value": 16,
+				"value": 20,
 				"slot": "sword"
 			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{
 						"items": [
-							"minecraft:iron_ingot"
+							"arw:steel_ingot"
 						],
-						"repair_amount": "query.max_durability * 0.25"
+						"repair_amount": "query.max_durability * 0.4"
 					},
 					{
 						"items": [
-							"arw:steel_estoc"
+							"arw:qiang"
 						],
-						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
+						"repair_amount": "context.other->query.remaining_durability + 0.15 * context.other->query.max_durability"
 					}
 				]
 			},
@@ -41,6 +41,16 @@
 				"tags": [
 					"minecraft:is_sword",
 					"minecraft:is_tool"
+				]
+			},
+			"minecraft:on_hit": {
+				"effects": [
+					{
+						"effect": "slowness",
+						"amplifier": 1,
+						"duration": 60,
+						"target": "victim"
+					}
 				]
 			}
 		}

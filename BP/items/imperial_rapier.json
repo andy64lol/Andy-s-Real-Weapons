@@ -2,7 +2,7 @@
   "format_version": "1.21.80",
   "minecraft:item": {
     "description": {
-      "identifier": "arw:imperial_estoc",
+      "identifier": "arw:imperial_rapier",
       "menu_category": {
         "category": "equipment",
         "group": "minecraft:itemGroup.name.sword"
@@ -15,7 +15,7 @@
       "minecraft:durability": {
         "max_durability": 784
       },
-      "minecraft:icon": "arw_imperial_estoc",
+      "minecraft:icon": "arw_imperial_rapier",
       "minecraft:damage": 9,
       "minecraft:enchantable": {
         "value": 25,
@@ -31,7 +31,7 @@
           },
           {
             "items": [
-              "arw:steel_estoc"
+              "arw:steel_rapier"
             ],
             "repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
           }
@@ -60,7 +60,7 @@
         ]
       },
       "minecraft:display_name": {
-        "value": "§6Imperial Estoc"
+        "value": "§6Imperial rapier"
       },
       "minecraft:lore": [
         "§7A finely crafted blade,",

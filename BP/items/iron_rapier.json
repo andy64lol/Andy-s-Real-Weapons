@@ -2,7 +2,7 @@
 	"format_version": "1.21.80",
 	"minecraft:item": {
 		"description": {
-			"identifier": "arw:iron_estoc",
+			"identifier": "arw:iron_rapier",
 			"menu_category": {
 				"category": "equipment",
 				"group": "minecraft:itemGroup.name.sword"
@@ -15,7 +15,7 @@
 			"minecraft:durability": {
 				"max_durability": 251
 			},
-			"minecraft:icon": "arw_iron_estoc",
+			"minecraft:icon": "arw_iron_rapier",
 			"minecraft:damage": 6,
 			"minecraft:enchantable": {
 				"value": 14,
@@ -31,7 +31,7 @@
 					},
 					{
 						"items": [
-							"arw:iron_estoc"
+							"arw:iron_rapier"
 						],
 						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
 					}

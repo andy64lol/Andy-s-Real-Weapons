@@ -80,17 +80,23 @@
 		"arw_iron_claymore": {
 			"textures": "textures/items/iron_claymore"
 		},
-		"arw_iron_estoc": {
-			"textures": "textures/items/iron_estoc"
+		"arw_iron_rapier": {
+			"textures": "textures/items/iron_rapier"
 		},
-		"arw_steel_estoc": {
-			"textures": "textures/items/steel_estoc"
+		"arw_steel_rapier": {
+			"textures": "textures/items/steel_rapier"
 		},
-		"arw_imperial_estoc": {
-			"textures": "textures/items/imperial_estoc"
+		"arw_imperial_rapier": {
+			"textures": "textures/items/imperial_rapier"
 		},
 		"arw_shogun_katana": {
-			"textures": "textures/items/shogun's_katana"
+			"textures": "textures/items/shogun_katana"
+		},
+		"arw_dao": {
+			"textures": "textures/items/dao"
+		},
+		"arw_qiang": {
+			"textures": "textures/items/qiang"
 		}
 	}
 }

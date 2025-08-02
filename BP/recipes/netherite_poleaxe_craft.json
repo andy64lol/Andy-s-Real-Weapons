@@ -26,6 +26,16 @@
 		"result": {
 			"item": "arw:netherite_poleaxe",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:netherite_poleaxe_craft"
+			],
+			"items": [
+				"minecraft:netherite_ingot",
+				"arw:steel_poleaxe"
+			]
 		}
 	}
 }

@@ -26,6 +26,16 @@
 		"result": {
 			"item": "arw:royal_kris",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:royal_kris_recipe"
+			],
+			"items": [
+				"minecraft:emerald",
+				"arw:gold_kris"
+			]
 		}
 	}
 }

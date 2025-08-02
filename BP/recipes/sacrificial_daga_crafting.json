@@ -26,6 +26,15 @@
 		"result": {
 			"item": "arw:sacrificial_daga",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:sacrificial_daga_recipe"
+			],
+			"items": [
+				"arw:cursed_netherite_ingot"
+			]
 		}
 	}
 }

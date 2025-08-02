@@ -23,6 +23,16 @@
 		"result": {
 			"item": "arw:amethyst_spear",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:amethyst_spear_recipe"
+			],
+			"items": [
+				"minecraft:amethyst_shard",
+				"minecraft:stick"
+			]
 		}
 	}
 }

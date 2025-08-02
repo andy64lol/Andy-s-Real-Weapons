@@ -29,7 +29,9 @@
 				"arw:gold_daga_recipe"
 			],
 			"items": [
-				"minecraft:gold_ingot"
+				"minecraft:gold_ingot",
+				"minecraft:string",
+				"minecraft:stick"
 			]
 		}
 	}

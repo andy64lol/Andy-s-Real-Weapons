@@ -30,7 +30,9 @@
 				"arw:iron_kris_recipe"
 			],
 			"items": [
-				"minecraft:iron_ingot"
+				"minecraft:iron_ingot",
+				"minecraft:string",
+				"minecraft:stick"
 			]
 		}
 	}

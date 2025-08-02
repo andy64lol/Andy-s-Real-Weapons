@@ -18,10 +18,12 @@
         },
         "unlock": {
             "context": "player",
-            "criteria": [
-                {
-                    "item": "arw:jade_daga_dull"
-                }
+            "recipes": [
+                "arw:jade_daga_polishing"
+            ],
+            "items": [
+                "arw:jade_daga_dull",
+                "arw:jade_gem"
             ]
         }
   }

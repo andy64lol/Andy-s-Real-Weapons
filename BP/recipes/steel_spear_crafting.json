@@ -23,6 +23,16 @@
 		"result": {
 			"item": "arw:steel_spear",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:steel_spear_recipe"
+			],
+			"items": [
+				"arw:steel_ingot",
+				"minecraft:stick"
+			]
 		}
 	}
 }

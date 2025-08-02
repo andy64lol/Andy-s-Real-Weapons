@@ -20,7 +20,16 @@
 		},
 		"result": {
 			"item": "arw:jade_gem",
-			"count": 8
+			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:polishing_jade_crafting"
+			],
+			"items": [
+				"arw:jade_gem_brute"
+			]
 		}
 	}
 }

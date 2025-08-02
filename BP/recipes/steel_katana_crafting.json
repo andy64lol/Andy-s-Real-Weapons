@@ -23,6 +23,16 @@
 		"result": {
 			"item": "arw:steel_katana",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:steel_katana_recipe"
+			],
+			"items": [
+				"arw:steel_ingot",
+				"minecraft:stick"
+			]
 		}
 	}
 }

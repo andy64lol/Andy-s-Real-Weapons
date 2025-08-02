@@ -18,6 +18,15 @@
 		"result": {
 			"item": "arw:jade_daga_dull",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:jade_daga_dull"
+			],
+			"items": [
+				"arw:jade_gem_brute"
+			]
 		}
 	}
 }

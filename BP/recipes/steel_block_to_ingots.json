@@ -15,6 +15,15 @@
 		"result": {
 			"item": "arw:steel_ingot",
 			"count": 9
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:steel_block_to_ingots"
+			],
+			"items": [
+				"arw:steel_block"
+			]
 		}
 	}
 }

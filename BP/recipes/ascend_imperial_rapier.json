@@ -31,6 +31,7 @@
 			"count": 1
 		},
 		"unlock": {
+			"context": "player",
 			"recipes": [
 				"arw:ascend_imperial_rapier"
 			],

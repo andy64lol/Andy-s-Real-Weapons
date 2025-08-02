@@ -25,13 +25,13 @@
 			"count": 1
 		},
 		"unlock": {
-			"context": "survival",
+			"context": "player",
 			"recipes": [
 				"arw:iron_rapier"
 			],
 			"items": [
 				"minecraft:iron_ingot",
-				"minecraft:coal"
+				"arw:iron_stick"
 			]
 		}
 	}

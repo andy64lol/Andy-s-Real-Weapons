@@ -22,6 +22,16 @@
 		"result": {
 			"item": "arw:netherite_daga",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:netherite_daga_recipe"
+			],
+			"items": [
+				"minecraft:netherite_ingot",
+				"arw:flint_daga"
+			]
 		}
 	}
 }

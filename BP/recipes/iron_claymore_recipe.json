@@ -29,17 +29,12 @@
 		},
 		"unlock": {
 			"context": "player",
-			"criteria": [
-				{
-					"trigger": "minecraft:inventory_changed",
-					"conditions": {
-						"items": [
-							{
-								"item": "minecraft:iron_ingot"
-							}
-						]
-					}
-				}
+			"recipes": [
+				"arw:iron_claymore_recipe"
+			],
+			"items": [
+				"minecraft:iron_ingot",
+				"arw:iron_stick"
 			]
 		}
 	}

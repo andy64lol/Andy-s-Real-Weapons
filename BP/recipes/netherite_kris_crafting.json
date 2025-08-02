@@ -23,6 +23,16 @@
 		"result": {
 			"item": "arw:netherite_kris",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:netherite_kris_recipe"
+			],
+			"items": [
+				"minecraft:netherite_ingot",
+				"arw:gold_kris"
+			]
 		}
 	}
 }

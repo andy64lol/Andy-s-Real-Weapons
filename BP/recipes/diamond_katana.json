@@ -30,7 +30,8 @@
 				"arw:diamond_katana_recipe"
 			],
 			"items": [
-				"minecraft:diamond"
+				"minecraft:diamond",
+				"minecraft:stick"
 			]
 		}
 	}

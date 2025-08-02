@@ -33,7 +33,9 @@
 				"arw:flint_daga_recipe"
 			],
 			"items": [
-				"minecraft:flint"
+				"minecraft:flint",
+				"minecraft:string",
+				"minecraft:stick"
 			]
 		}
 	}

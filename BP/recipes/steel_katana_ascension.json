@@ -24,6 +24,16 @@
 		"result": {
 			"item": "arw:shogun_katana",
 			"count": 1
+		},
+		"unlock": {
+			"context": "player",
+			"recipes": [
+				"arw:steel_katana_ascension"
+			],
+			"items": [
+				"arw:iron_katana",
+				"arw:steel_ingot"
+			]
 		}
 	}
 }

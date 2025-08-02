@@ -23,7 +23,7 @@
 		"unlock": {
 			"context": "player",
 			"recipes": [
-				"arw:iron_stick_recipe"
+				"arw:iron_stick_crafting"
 			],
 			"items": [
 				"minecraft:iron_ingot"

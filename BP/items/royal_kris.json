@@ -1,55 +1,73 @@
 {
-	"format_version": "1.21.80",
-	"minecraft:item": {
-		"description": {
-			"identifier": "arw:royal_kris",
-			"menu_category": {
-				"category": "equipment",
-				"group": "minecraft:itemGroup.name.sword"
-			},
-			"custom_item_name": {
-				"value": "§6§lRoyal Kris"
-			}
-		},
-		"components": {
-			"minecraft:max_stack_size": 1,
-			"minecraft:hand_equipped": true,
-			"minecraft:can_destroy_in_creative": false,
-			"minecraft:durability": {
-				"max_durability": 1990
-			},
-			"minecraft:icon": "arw_royal_kris",
-			"minecraft:damage": 9,
-			"minecraft:enchantable": {
-				"value": 22,
-				"slot": "sword"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:emerald"
-						],
-						"repair_amount": "query.max_durability*0.23"
-					},
-					{
-						"items": [
-							"arw:royal_kris"
-						],
-						"repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
-					}
-				]
-			},
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_sword",
-					"minecraft:is_tool"
-				]
-			},
-			"minecraft:lore": [
-				"§dForged with precious emeralds and golden handle.",
-				"§7An elegant blade for those of noble blood."
-			]
-		}
-	}
+  "format_version": "1.21.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "arw:royal_kris",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.sword"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:durability": {
+        "max_durability": 1990
+      },
+      "minecraft:icon": "arw_royal_kris",
+      "minecraft:damage": 9,
+      "minecraft:enchantable": {
+        "value": 22,
+        "slot": "sword"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "query.max_durability*0.23"
+          },
+          {
+            "items": [
+              "arw:royal_kris"
+            ],
+            "repair_amount": "context.other->query.remaining_durability+0.12*context.other->query.max_durability"
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_sword",
+          "minecraft:is_tool"
+        ]
+      },
+      "minecraft:display_name": {
+        "value": "§eRoyal Kris"
+      },
+      "minecraft:lore": [
+        "§dForged with precious emeralds and golden handle.",
+        "§7An elegant blade for those of noble blood."
+      ],
+      "minecraft:attribute": {
+        "modifiers": [
+          {
+            "attribute": "minecraft:movement_speed",
+            "name": "arw:royal_kris_speed",
+            "operation": "multiply_base",
+            "value": 0.15,
+            "slot": "mainhand"
+          },
+          {
+            "attribute": "minecraft:attack_damage",
+            "name": "arw:royal_kris_strength",
+            "operation": "addition",
+            "value": 2,
+            "slot": "mainhand"
+          }
+        ]
+      }
+    }
+  }
 }

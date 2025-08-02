@@ -1,62 +1,84 @@
 {
-	"format_version": "1.21.80",
-	"minecraft:item": {
-		"description": {
-			"identifier": "arw:diamond_katana",
-			"menu_category": {
-				"category": "equipment",
-				"group": "minecraft:itemGroup.name.sword"
-			}
-		},
-		"components": {
-			"minecraft:max_stack_size": 1,
-			"minecraft:hand_equipped": true,
-			"minecraft:can_destroy_in_creative": false,
-			"minecraft:durability": {
-				"max_durability": 1590
-			},
-			"minecraft:icon": "arw_diamond_katana",
-			"minecraft:damage": 11,
-			"minecraft:enchantable": {
-				"value": 18,
-				"slot": "sword"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:diamond"
-						],
-						"repair_amount": "query.max_durability*0.3"
-					},
-					{
-						"items": [
-							"arw:diamond_katana"
-						],
-						"repair_amount": "context.other->query.remaining_durability+0.2*context.other->query.max_durability"
-					}
-				]
-			},
-			"minecraft:digger": {
-				"use_efficiency": true,
-				"destroy_speeds": [
-					{
-						"block": "minecraft:bamboo",
-						"speed": 80
-					},
-					{
-						"block": "minecraft:reeds",
-						"speed": 80
-					}
-				]
-			},
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_sword",
-					"minecraft:is_weapon",
-					"minecraft:is_tool"
-				]
-			}
-		}
-	}
+  "format_version": "1.21.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "arw:diamond_katana",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.sword"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:durability": {
+        "max_durability": 1590
+      },
+      "minecraft:icon": "arw_diamond_katana",
+      "minecraft:damage": 11,
+      "minecraft:enchantable": {
+        "value": 18,
+        "slot": "sword"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:diamond"
+            ],
+            "repair_amount": "query.max_durability*0.3"
+          },
+          {
+            "items": [
+              "arw:diamond_katana"
+            ],
+            "repair_amount": "context.other->query.remaining_durability+0.2*context.other->query.max_durability"
+          }
+        ]
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:bamboo",
+            "speed": 80
+          },
+          {
+            "block": "minecraft:reeds",
+            "speed": 80
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_sword",
+          "minecraft:is_weapon",
+          "minecraft:is_tool"
+        ]
+      },
+      "minecraft:on_equipped": {
+        "add_effect": [
+          {
+            "effect": "speed",
+            "amplifier": 1,
+            "duration": 100,
+            "target": "self"
+          },
+          {
+            "effect": "jump_boost",
+            "amplifier": 1,
+            "duration": 100,
+            "target": "self"
+          },
+          {
+            "effect": "hunger",
+            "amplifier": 2,
+            "duration": 100,
+            "target": "self"
+          }
+        ]
+      }
+    }
+  }
 }

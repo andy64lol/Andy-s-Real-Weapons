@@ -1,48 +1,74 @@
 {
-	"format_version": "1.20.80",
-	"minecraft:item": {
-		"description": {
-			"identifier": "arw:steel_spear",
-			"menu_category": {
-				"category": "equipment",
-				"group": "minecraft:itemGroup.name.sword"
-			}
-		},
-		"components": {
-			"minecraft:max_stack_size": 1,
-			"minecraft:hand_equipped": true,
-			"minecraft:can_destroy_in_creative": false,
-			"minecraft:durability": {
-				"max_durability": 500
-			},
-			"minecraft:icon": "arw_steel_spear",
-			"minecraft:damage": 7,
-			"minecraft:enchantable": {
-				"value": 10,
-				"slot": "sword"
-			},
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"arw:steel_ingot"
-						],
-						"repair_amount": "query.max_durability*0.3"
-					},
-					{
-						"items": [
-							"arw:steel_spear"
-						],
-						"repair_amount": "context.other->query.remaining_durability+0.15*context.other->query.max_durability"
-					}
-				]
-			},
-			"minecraft:tags": {
-				"tags": [
-					"minecraft:is_sword",
-					"minecraft:is_tool"
-				]
-			}
-		}
-	}
+  "format_version": "1.21.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "arw:steel_spear",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.sword"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:durability": {
+        "max_durability": 500
+      },
+      "minecraft:icon": "arw_steel_spear",
+      "minecraft:damage": 7,
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "sword"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "arw:steel_ingot"
+            ],
+            "repair_amount": "query.max_durability*0.3"
+          },
+          {
+            "items": [
+              "arw:steel_spear"
+            ],
+            "repair_amount": "context.other->query.remaining_durability+0.15*context.other->query.max_durability"
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_sword",
+          "minecraft:is_tool"
+        ]
+      },
+      "minecraft:on_hit": {
+        "add_effect": [
+          {
+            "effect": "slowness",
+            "duration": 60,
+            "amplifier": 0,
+            "target": "victim"
+          },
+          {
+            "effect": "weakness",
+            "duration": 60,
+            "amplifier": 0,
+            "target": "victim"
+          }
+        ]
+      },
+      "minecraft:on_equipped": {
+        "add_effect": [
+          {
+            "effect": "speed",
+            "duration": 40,
+            "amplifier": 0,
+            "target": "self"
+          }
+        ]
+      }
+    }
+  }
 }

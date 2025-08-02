@@ -34,6 +34,16 @@
       "minecraft:cooldown": {
         "category": "attack",
         "duration": 0.3
+      },
+      "minecraft:on_hit": {
+        "effects": [
+          {
+            "effect": "weakness",
+            "amplifier": 7,
+            "duration": 100,
+            "target": "target"
+          }
+        ]
       }
     }
   }

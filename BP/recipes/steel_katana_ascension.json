@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:steel_katana_ascension"
+		},
+		"tags": [],
+		"pattern": [
+			"CGC",
+			"GSG",
+			"CGC"
+		],
+		"key": {
+			"C": {
+				"item": "arw:cursed_netherite_ingot"
+			},
+			"G": {
+				"item": "minecraft:enchanted_golden_apple"
+			},
+			"S": {
+				"item": "arw:steel_katana"
+			}
+		},
+		"result": {
+			"item": "arw:shogun_katana",
+			"count": 1
+		}
+	}
+}

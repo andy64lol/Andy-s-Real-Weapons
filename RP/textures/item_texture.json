@@ -88,6 +88,9 @@
 		},
 		"arw_imperial_estoc": {
 			"textures": "textures/items/imperial_estoc"
+		},
+		"arw_shogun_katana": {
+			"textures": "textures/items/shogun's_katana"
 		}
 	}
 }

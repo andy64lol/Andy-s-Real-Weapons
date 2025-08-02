@@ -29,6 +29,7 @@
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
       },
+      "minecraft:geometry": "geometry.cube",
       "minecraft:material_instances": {
         "*": {
           "texture": "arw_jade_mineral",

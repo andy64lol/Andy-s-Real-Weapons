@@ -1,29 +1,14 @@
 {
-    "pools": [
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
         {
-            "rolls": 1,
-            "conditions": [
-                {
-                    "condition": "match_tool",
-                    "predicate": {
-                        "item_tags": [
-                            "minecraft:is_pickaxe"
-                        ],
-                        "enchantments": [],
-                        "durability": {},
-                        "items": [
-                            "minecraft:diamond_pickaxe"
-                        ]
-                    }
-                }
-            ],
-            "entries": [
-                {
-                    "type": "item",
-                    "name": "arw:jade_gem_brute",
-                    "weight": 1
-                }
-            ]
+          "type": "item",
+          "name": "arw:jade_gem_brute",
+          "weight": 1
         }
-    ]
+      ]
+    }
+  ]
 }

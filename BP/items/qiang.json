@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.80",
+	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
 			"identifier": "arw:qiang",
@@ -41,16 +41,6 @@
 				"tags": [
 					"minecraft:is_sword",
 					"minecraft:is_tool"
-				]
-			},
-			"minecraft:on_hit": {
-				"effects": [
-					{
-						"effect": "slowness",
-						"amplifier": 1,
-						"duration": 60,
-						"target": "victim"
-					}
 				]
 			}
 		}

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:cursed_netherite_ingot",
@@ -9,17 +9,9 @@
       }
     },
     "components": {
-      "minecraft:icon": "arw_cursed_netherite_ingot",
-      "minecraft:on_equipped": {
-        "add_effect": [
-		  {
-			"effect": "wither",
-			"amplifier": 0,
-			"duration": 100,
-			"target": "self"
-		  }
-		]
-      }
+      "minecraft:icon": "arw_cursed_netherite_ingot"
+      
+      
     }
   }
 }

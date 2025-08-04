@@ -1,11 +1,11 @@
 {
-	"format_version": "1.20.80",
+	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
 			"identifier": "arw:jade_gem_brute",
 			"menu_category": {
 				"category": "nature",
-				"group": "itemGroup.name.ingot"
+				"group": "minecraft:itemGroup.name.ingot"
 			}
 		},
 		"components": {

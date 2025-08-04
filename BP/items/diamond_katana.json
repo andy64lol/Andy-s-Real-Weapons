@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:diamond_katana",
@@ -55,28 +55,6 @@
           "minecraft:is_sword",
           "minecraft:is_weapon",
           "minecraft:is_tool"
-        ]
-      },
-      "minecraft:on_equipped": {
-        "add_effect": [
-          {
-            "effect": "speed",
-            "amplifier": 1,
-            "duration": 100,
-            "target": "self"
-          },
-          {
-            "effect": "jump_boost",
-            "amplifier": 1,
-            "duration": 100,
-            "target": "self"
-          },
-          {
-            "effect": "hunger",
-            "amplifier": 2,
-            "duration": 100,
-            "target": "self"
-          }
         ]
       }
     }

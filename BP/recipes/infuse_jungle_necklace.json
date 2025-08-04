@@ -1,8 +1,8 @@
 {
-	"format_version": "1.21.80",
+	"format_version": "1.21.100",
 	"minecraft:recipe_shapeless": {
 		"description": {
-			"identifier": "arw:infuse_jungle_necklace"
+			"identifier": "arw:infuse_necklace_of_jungle"
 		},
 		"tags": [],
 		"ingredients": [
@@ -14,7 +14,7 @@
 			}
 		],
 		"result": {
-			"item": "arw:jungle_necklace"
+			"item": "arw:necklace_of_jungle"
 		},
 		"unlock": {
 			"context": "minecraft:recipe",

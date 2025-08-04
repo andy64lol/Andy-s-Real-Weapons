@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:royal_kris",
@@ -49,25 +49,7 @@
       "minecraft:lore": [
         "§dForged with precious emeralds and golden handle.",
         "§7An elegant blade for those of noble blood."
-      ],
-      "minecraft:attribute": {
-        "modifiers": [
-          {
-            "attribute": "minecraft:movement_speed",
-            "name": "arw:royal_kris_speed",
-            "operation": "multiply_base",
-            "value": 0.15,
-            "slot": "mainhand"
-          },
-          {
-            "attribute": "minecraft:attack_damage",
-            "name": "arw:royal_kris_strength",
-            "operation": "addition",
-            "value": 2,
-            "slot": "mainhand"
-          }
-        ]
-      }
+      ]
     }
   }
 }

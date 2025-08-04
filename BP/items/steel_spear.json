@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:steel_spear",
@@ -41,32 +41,6 @@
         "tags": [
           "minecraft:is_sword",
           "minecraft:is_tool"
-        ]
-      },
-      "minecraft:on_hit": {
-        "add_effect": [
-          {
-            "effect": "slowness",
-            "duration": 60,
-            "amplifier": 0,
-            "target": "victim"
-          },
-          {
-            "effect": "weakness",
-            "duration": 60,
-            "amplifier": 0,
-            "target": "victim"
-          }
-        ]
-      },
-      "minecraft:on_equipped": {
-        "add_effect": [
-          {
-            "effect": "speed",
-            "duration": 40,
-            "amplifier": 0,
-            "target": "self"
-          }
         ]
       }
     }

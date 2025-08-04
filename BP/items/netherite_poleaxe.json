@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:netherite_poleaxe",
@@ -20,10 +20,6 @@
       "minecraft:display_name": {
         "value": "§6Netherite Poleaxe"
       },
-      "minecraft:description": {
-        "identifier": "arw:netherite_poleaxe",
-        "localization": "item.arw.netherite_poleaxe.desc"
-      },
       "minecraft:enchantable": {
         "slot": "sword",
         "value": 14
@@ -42,32 +38,6 @@
         "tags": [
           "minecraft:is_sword",
           "minecraft:is_tool"
-        ]
-      },
-      "minecraft:on_equipped": {
-        "add_effect": [
-          {
-            "effect": "slowness",
-            "amplifier": 2,
-            "duration": 12,
-            "target": "self"
-          }
-        ]
-      },
-      "minecraft:on_hit": {
-        "effects": [
-          {
-            "effect": "weakness",
-            "amplifier": 4,
-            "target": "target",
-        	"duration": 30
-          },
-		  {
-			"effect": "slowness",
-			"amplifier": 2,
-			"target": "target",
-			"duration": 40
-		  }
         ]
       }
     }

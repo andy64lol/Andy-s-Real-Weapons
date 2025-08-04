@@ -2,18 +2,18 @@
 	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "arw:necklace_of_magma",
+			"identifier": "arw:necklace_of_immortality",	
 			"menu_category": {
 				"category": "equipment"
 			}
 		},
 		"components": {
-			"minecraft:icon": "arw_necklace_of_magma",
+			"minecraft:icon": "arw_necklace_of_immortality",
 			"minecraft:wearable": {
 				"slot": "slot.weapon.offhand"
 			},
 			"minecraft:display_name": {
-				"value": "Necklace of the Magmatic"
+				"value": "Necklace of the Immortal"
 			},
 			"minecraft:equippable": {
 				"slot": "slot.offhand"

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:jade_daga",
@@ -30,20 +30,9 @@
           "minecraft:is_tool"
         ]
       },
-      "minecraft:entity_despawn_on_death": true,
       "minecraft:cooldown": {
         "category": "attack",
-        "duration": 0.3
-      },
-      "minecraft:on_hit": {
-        "effects": [
-          {
-            "effect": "weakness",
-            "amplifier": 7,
-            "duration": 100,
-            "target": "target"
-          }
-        ]
+        "duration": 6
       }
     }
   }

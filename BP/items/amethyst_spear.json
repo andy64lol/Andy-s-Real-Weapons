@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:amethyst_spear",
@@ -26,28 +26,6 @@
           "minecraft:is_sword",
           "minecraft:is_tool"
         ]
-      },
-      "minecraft:on_hit": {
-          "add_effect": [
-            {
-              "effect": "weakness",
-              "amplifier": 1,
-              "duration": 100,
-              "target": "victim"
-            },
-            {
-              "effect": "slowness",
-              "amplifier": 0,
-              "duration": 100,
-              "target": "victim"
-            },
-            {
-              "effect": "hunger",
-              "amplifier": 3,
-              "duration": 100,
-              "target": "victim"
-            }
-          ]
       }
     }
   }

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.80",
+  "format_version": "1.21.100",
   "minecraft:item": {
     "description": {
       "identifier": "arw:sacrificial_daga",
@@ -44,33 +44,7 @@
         "§7A daga made using lost souls,",
         "§7cursed for eternity,",
         "§7bound by the wielder's own blood sacrifice..."
-      ],
-      "minecraft:on_equipped": {
-        "add_effect": [
-          {
-            "effect": "wither",
-            "amplifier": 0,
-            "duration": 40,
-            "target": "self"
-          }
-        ]
-      },
-      "minecraft:on_hit": {
-        "effects": [
-          {
-            "effect": "wither",
-            "duration": 60,
-            "amplifier": 0,
-            "target": "victim"
-          },
-          {
-            "effect": "regeneration",
-            "duration": 40,
-            "amplifier": 2,
-            "target": "self"
-          }
-        ]
-      }
+      ]
     }
   }
 }

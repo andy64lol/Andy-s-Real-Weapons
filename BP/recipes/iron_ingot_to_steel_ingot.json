@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.80",
+	"format_version": "1.21.100",
 	"minecraft:recipe_blasting": {
 		"description": {
 			"identifier": "arw:iron_to_steel_ingot_upgrade"

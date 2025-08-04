@@ -4,4 +4,5 @@ Desktop.ini
 .bridge/*
 !.bridge/compiler/
 !.bridge/extensions
-builds
+builds/*
+!builds/Andy's Real Weapons.mcaddon

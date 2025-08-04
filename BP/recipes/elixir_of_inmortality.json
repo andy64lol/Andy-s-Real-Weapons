@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "arw:elixir_of_immortality_brewing"
+		},
+		"tags": [],
+		"input": "minecraft:potion",
+		"reagent": "minecraft:enchanted_golden_apple",
+		"output": "arw:elixir_of_immortality",
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:brewing_stand"
+			}
+		}
+	}
+}

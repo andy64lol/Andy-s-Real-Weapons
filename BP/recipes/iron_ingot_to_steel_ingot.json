@@ -1,33 +1,25 @@
 {
 	"format_version": "1.21.80",
-	"minecraft:recipe_shaped": {
+	"minecraft:recipe_blasting": {
 		"description": {
 			"identifier": "arw:iron_to_steel_ingot_upgrade"
 		},
 		"tags": [
-			"crafting_table"
+			"blast_furnace"
 		],
-		"pattern": [
-			"CCC",
-			"CIC",
-			"CCC"
-		],
-		"key": {
-			"I": {
-				"item": "minecraft:iron_ingot"
-			},
-			"C": {
-				"item": "minecraft:coal"
-			}
+		"input": {
+			"item": "minecraft:iron_ingot"
 		},
-		"result": {
+		"material": {
+			"item": "minecraft:coal"
+		},
+		"output": {
 			"item": "arw:steel_ingot",
 			"count": 1
 		},
+		"experience": 0.3,
+		"cooking_time": 100,
 		"unlock": {
-			"recipes": [
-				"arw:iron_to_steel_ingot_upgrade"
-			],
 			"items": [
 				"minecraft:iron_ingot",
 				"minecraft:coal"

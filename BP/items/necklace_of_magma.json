@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:necklace_of_magma",
+			"category": "equipment",
+			"register_to_create_menu": true
+		},
+		"components": {
+			"minecraft:icon": "arw_necklace_of_magma",
+			"minecraft:display_name": {
+				"value": "§6Necklace of Magma"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:keep_on_death": true,
+			"minecraft:hand_equipped": true,
+			"minecraft:wearable": {
+				"slot": "slot.weapon.offhand"
+			},
+			"minecraft:effect_when_equipped": {
+				"effects": [
+					{
+						"name": "fire_resistance",
+						"duration": 999999,
+						"amplifier": 0
+					},
+					{
+						"name": "night_vision",
+						"duration": 999999,
+						"amplifier": 2
+					},
+					{
+						"name": "absorption",
+						"duration": 999999,
+						"amplifier": 1
+					}
+				]
+			},
+			"minecraft:glint": true,
+			"minecraft:glow": true
+		}
+	}
+}

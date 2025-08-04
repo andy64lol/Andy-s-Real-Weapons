@@ -97,6 +97,36 @@
 		},
 		"arw_qiang": {
 			"textures": "textures/items/qiang"
+		},
+		"arw_elixir_of_inmortality": {
+			"textures": "textures/items/inmortal_elixir"
+		},
+		"arw_elixir_of_immortality": {
+			"textures": "textures/items/inmortal_elixir"
+		},
+		"arw_necklace_of_inmortality": {
+			"textures": "textures/items/necklace_of_inmortality"
+		},
+		"arw_necklace": {
+			"textures": "textures/items/empty_necklace"
+		},
+		"arw_empty_necklace": {
+			"textures": "textures/items/empty_necklace"
+		},
+		"arw_elixir_of_jungle": {
+			"textures": "textures/items/elixir_of_the_jungle"
+		},
+		"elixir_of_the_jungle": {
+			"textures": "textures/items/elixir_of_the_jungle"
+		},
+		"arw_necklace_of_jungle": {
+			"textures": "textures/items/necklace_of_the_jungle"
+		},
+		"arw_elixir_of_magma": {
+			"textures": "textures/items/elixir_of_the_magmatic"
+		},
+		"arw_necklace_of_magma": {
+			"textures": "textures/items/necklace_of_the_magmatic"
 		}
 	}
 }

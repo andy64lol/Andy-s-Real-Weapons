@@ -1,10 +1,6 @@
 {
 	"format_version": "1.21.80",
 	"minecraft:block": {},
-	"arw:iron_claymore": {
-		"sound": "stone",
-		"textures": "arw_iron_claymore"
-	},
 	"arw:steel_block": {
 		"sound": "stone",
 		"textures": "arw_steel_block"

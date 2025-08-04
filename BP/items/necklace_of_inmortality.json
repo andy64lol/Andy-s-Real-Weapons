@@ -1,0 +1,47 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:necklace_of_inmortality",
+			"category": "equipment",
+			"is_experimental": false,
+			"register_to_create_menu": true
+		},
+		"components": {
+			"minecraft:icon": "arw_necklace_of_inmortality",
+			"minecraft:display_name": {
+				"value": "§6Necklace of Inmortality"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:keep_on_death": true,
+			"minecraft:hand_equipped": true,
+			"minecraft:wearable": {
+				"slot": "slot.weapon.offhand"
+			},
+			"minecraft:conditional_effects": {
+				"effects": [
+					{
+						"condition": "query.is_equipped_offhand",
+						"effect": "health_boost",
+						"amplifier": 21,
+						"duration": 2000000000
+					},
+					{
+						"condition": "query.is_equipped_offhand",
+						"effect": "resistance",
+						"amplifier": 6,
+						"duration": 2000000000
+					},
+					{
+						"condition": "query.is_equipped_offhand",
+						"effect": "regeneration",
+						"amplifier": 2,
+						"duration": 2000000000
+					}
+				]
+			},
+			"minecraft:glint": true,
+			"minecraft:glow": true
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "arw:infusion_necklace_inmortality"
+		},
+		"tags": [],
+		"ingredients": [
+			{
+				"item": "arw:elixir_of_immortality"
+			},
+			{
+				"item": "arw:empty_necklace"
+			}
+		],
+		"result": {
+			"item": "arw:necklace_of_inmortality",
+			"count": 1
+		},
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:brewing_stand"
+			}
+		}
+	}
+}

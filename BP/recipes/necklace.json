@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:necklace"
+		},
+		"tags": [],
+		"pattern": [
+			" GG",
+			"G G",
+			"GGB"
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:gold_nugget"
+			},
+			"B": {
+				"item": "minecraft:glass_bottle"
+			}
+		},
+		"result": {
+			"item": "arw:empty_necklace",
+			"count": 1
+		},
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:crafting_table"
+			}
+		}
+	}
+}

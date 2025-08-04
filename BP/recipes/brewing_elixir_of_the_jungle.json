@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "arw:brew_elixir_of_the_jungle"
+		},
+		"tags": [],
+		"input": "minecraft:potion",
+		"reagent": "minecraft:vine",
+		"output": "arw:elixir_of_the_jungle",
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:brewing_stand"
+			}
+		}
+	}
+}

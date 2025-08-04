@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shapeless": {
+		"description": {
+			"identifier": "arw:infuse_jungle_necklace"
+		},
+		"tags": [],
+		"ingredients": [
+			{
+				"item": "arw:elixir_of_the_jungle"
+			},
+			{
+				"item": "arw:empty_necklace"
+			}
+		],
+		"result": {
+			"item": "arw:jungle_necklace"
+		},
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:crafting_table"
+			}
+		}
+	}
+}

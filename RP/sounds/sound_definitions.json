@@ -1,4 +1,28 @@
 {
-	"format_version": "1.21.100",
-	"sound_definitions": {}
+	"format_version": "1.21.90",
+	"sound_definitions": {
+		"arw.shogun_theme": {
+			"category": "music",
+			"sounds": [
+				{
+					"name": "sounds/shogun_theme",
+					"stream": true,
+					"load_on_low_memory": true,
+					"volume": 0.8,
+					"pitch": 1.0,
+					"weight": 1
+				}
+			]
+		},
+		"arw.katana_unsheathe": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/katana_draw",
+					"volume": 1.0,
+					"pitch": 0.9
+				}
+			]
+		}
+	}
 }

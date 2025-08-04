@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.21.90",
 	"minecraft:ore_feature": {
 		"description": {
 			"identifier": "arw:jade_mineral_feature"

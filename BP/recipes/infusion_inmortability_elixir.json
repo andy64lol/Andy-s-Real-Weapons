@@ -18,7 +18,7 @@
 			"count": 1
 		},
 		"unlock": {
-			"context": "minecraft:recipe"
+			"context": "None"
 		}
 	}
 }

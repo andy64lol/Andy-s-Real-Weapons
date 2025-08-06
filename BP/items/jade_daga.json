@@ -33,7 +33,10 @@
       "minecraft:cooldown": {
         "category": "attack",
         "duration": 6
-      }
+      },
+      "minecraft:allow_off_hand": true,
+      "minecraft:wearable": { "slot": "slot.weapon.offhand" },
+      "minecraft:equippable": { "slot": "slot.offhand" }
     }
   }
 }

@@ -5,7 +5,7 @@
 			"identifier": "arw:jade_gem_brute",
 			"menu_category": {
 				"category": "nature",
-				"group": "minecraft:itemGroup.name.ingot"
+				"group": "minecraft:itemGroup.name.ore"
 			}
 		},
 		"components": {

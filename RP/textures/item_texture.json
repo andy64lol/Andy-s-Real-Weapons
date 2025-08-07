@@ -124,6 +124,12 @@
 		},
 		"arw_necklace_of_magma": {
 			"textures": "textures/items/necklace_of_the_magmatic"
+		},
+		"arw_elixir_of_breeze": {
+			"textures": "textures/items/elixir_of_the_breeze"
+		},
+		"arw_necklace_of_breeze": {
+			"textures": "textures/items/necklace_of_the_breeze"
 		}
 	}
 }

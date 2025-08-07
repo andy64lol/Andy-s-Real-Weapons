@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:elixir_of_breeze",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "arw_elixir_of_breeze",
+			"minecraft:display_name": {
+				"value": "Elixir of the Breeze"
+			},
+			"minecraft:max_stack_size": 1
+		}
+	}
+}

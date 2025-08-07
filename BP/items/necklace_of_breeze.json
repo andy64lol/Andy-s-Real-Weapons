@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:necklace_of_breeze",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:icon": "arw_necklace_of_breeze",
+			"minecraft:wearable": {
+				"slot": "slot.weapon.offhand"
+			},
+			"minecraft:display_name": {
+				"value": "Necklace of the Breeze"
+			},
+			"minecraft:equippable": {
+				"slot": "slot.offhand"
+			},
+			"minecraft:max_stack_size": 1,
+			"minecraft:keep_on_death": true,
+			"minecraft:hand_equipped": true,
+			"minecraft:glint": true,
+			"minecraft:glow": true
+		}
+	}
+}

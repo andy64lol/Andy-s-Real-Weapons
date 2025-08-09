@@ -13,7 +13,7 @@
 			"minecraft:hand_equipped": true,
 			"minecraft:can_destroy_in_creative": false,
 			"minecraft:durability": {
-				"max_durability":3900
+				"max_durability": 3900
 			},
 			"minecraft:icon": "arw_shogun_katana",
 			"minecraft:damage": 12,
@@ -63,7 +63,8 @@
 				"§7This blade is possessed by the soul of Shogun Takeshiyuki,",
 				"§7his spirit forever bound within its steel.",
 				"§7Wielders feel his wrath and his undying honor."
-			]
+			],
+			"minecraft:glint": true
 		}
 	}
 }

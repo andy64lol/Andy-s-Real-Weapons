@@ -34,6 +34,25 @@
           }
         ]
       },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": {
+              "tags": "query.any_tag('wood', 'pumpkin', 'plant')"
+            },
+            "speed": 6
+          },
+          {
+            "block": "minecraft:chest",
+            "speed": 6
+          },
+          {
+            "block": "minecraft:melon_block",
+            "speed": 6
+          }
+        ]
+      },
       "minecraft:tags": {
         "tags": [
           "minecraft:is_sword",

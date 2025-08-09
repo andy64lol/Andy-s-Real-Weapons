@@ -50,7 +50,8 @@
         "§7A finely crafted blade,",
         "§7bestowed with regal protection.",
         "§7Wield it with honor."
-      ]
+      ],
+      "minecraft:glint": true
     }
   }
 }

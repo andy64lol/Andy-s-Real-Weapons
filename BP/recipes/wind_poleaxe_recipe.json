@@ -1,0 +1,40 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:wind_poleaxe_recipe"
+		},
+		"tags": ["crafting_table"],
+		"key": {
+			"H": {
+				"item": "minecraft:heavy_core"
+			},
+			"B": {
+				"item": "minecraft:breeze_rod"
+			},
+			"S": {
+				"item": "arw:steel_ingot"
+			}
+		},
+		"pattern": [
+			" HS",
+			" BS",
+			"B "
+		],
+		"result": {
+			"item": "arw:wind_poleaxe",
+			"count": 1
+		},
+		"unlock": {
+			"context": "none",
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:breeze_rod"
+					}
+				]
+			}
+		}
+	}
+}

@@ -27,10 +27,10 @@
           }
         ]
       },
-	  "minecraft:enchantable": {
-		"value": 25,
-		"slot": "sword"
-	  },
+      "minecraft:enchantable": {
+        "value": 25,
+        "slot": "sword"
+      },
       "minecraft:tags": {
         "tags": [
           "minecraft:is_sword",
@@ -44,7 +44,8 @@
         "§7A daga made using lost souls,",
         "§7cursed for eternity,",
         "§7bound by the wielder's own blood sacrifice..."
-      ]
+      ],
+      "minecraft:glint": true
     }
   }
 }

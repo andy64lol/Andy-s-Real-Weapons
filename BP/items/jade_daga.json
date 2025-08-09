@@ -35,8 +35,13 @@
         "duration": 6
       },
       "minecraft:allow_off_hand": true,
-      "minecraft:wearable": { "slot": "slot.weapon.offhand" },
-      "minecraft:equippable": { "slot": "slot.offhand" }
+      "minecraft:wearable": {
+        "slot": "slot.weapon.offhand"
+      },
+      "minecraft:equippable": {
+        "slot": "slot.offhand"
+      },
+      "minecraft:glint": true
     }
   }
 }

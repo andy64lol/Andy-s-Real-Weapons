@@ -24,8 +24,8 @@
 		"uuid": "b3ad18f3-adee-4be9-bc7c-69babe99208f",
 		"version": [
 			1,
-			21,
-			80
+			0,
+			0
 		]
 	},
 	"modules": [
@@ -34,9 +34,20 @@
 			"uuid": "8330259d-312d-4186-884e-84cef61c0306",
 			"version": [
 				1,
-				21,
-				80
+				0,
+				0
 			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "4cba1c75-35d2-48e3-a9c2-8c8f9d01e5e9",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"entry": "scripts/main.js"
 		}
 	],
 	"dependencies": [
@@ -44,8 +55,8 @@
 			"uuid": "402f3886-53c0-41fc-9d57-a337ccb70f56",
 			"version": [
 				1,
-				21,
-				80
+				0,
+				0
 			]
 		}
 	]

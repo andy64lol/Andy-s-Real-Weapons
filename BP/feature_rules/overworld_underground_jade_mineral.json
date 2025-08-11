@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.90",
+	"format_version": "1.21.100",
 	"minecraft:feature_rules": {
 		"description": {
 			"identifier": "arw:overworld_underground_jade_mineral",
@@ -7,30 +7,18 @@
 		},
 		"conditions": {
 			"placement_pass": "underground_pass",
-			"minecraft:biome_filter": [
-				{
-					"any_of": [
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "bamboo"
-						},
-						{
-							"test": "has_biome_tag",
-							"operator": "==",
-							"value": "warm"
-						}
-					]
-				}
-			]
+			"minecraft:biome_filter": {
+				"test": "has_biome_tag",
+				"operator": "==",
+				"value": "overworld"
+			}
 		},
 		"distribution": {
-			"iterations": 1,
+			"iterations": 8,
 			"scatter_chance": {
 				"numerator": 1,
-				"denominator": 10
+				"denominator": 12
 			},
-			"coordinate_eval_order": "zyx",
 			"x": {
 				"distribution": "uniform",
 				"extent": [
@@ -41,8 +29,8 @@
 			"y": {
 				"distribution": "uniform",
 				"extent": [
-					5,
-					30
+					0,
+					64
 				]
 			},
 			"z": {

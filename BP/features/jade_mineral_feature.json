@@ -1,15 +1,16 @@
 {
-	"format_version": "1.21.90",
+	"format_version": "1.21.100",
 	"minecraft:ore_feature": {
 		"description": {
 			"identifier": "arw:jade_mineral_feature"
 		},
-		"count": 1,
+		"count": 10,
 		"replace_rules": [
 			{
 				"places_block": "arw:jade_mineral",
 				"may_replace": [
-					"minecraft:stone"
+					"minecraft:stone",
+					"minecraft:deepslate"
 				]
 			}
 		]

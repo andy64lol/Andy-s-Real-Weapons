@@ -1,10 +1,12 @@
 {
-  "format_version": "1.21.90",
+  "format_version": "1.21.100",
   "minecraft:block": {
     "description": {
       "identifier": "arw:jade_mineral",
       "menu_category": {
-        "category": "construction"
+        "category": "nature",
+        "group": "minecraft:itemGroup.name.ore",
+        "is_hidden_in_commands": false
       }
     },
     "components": {
@@ -16,7 +18,12 @@
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 6.0
       },
+      "minecraft:friction": 0.6,
       "minecraft:map_color": "#00c870",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 0,
+        "destroy_chance_modifier": 0
+      },
       "minecraft:required_tool": {
         "tool_type": "pickaxe",
         "tier": 3
@@ -29,11 +36,13 @@
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
       },
-      "minecraft:geometry": "geometry.block.jade_mineral",
+      "minecraft:geometry": "geometry.arw_jade_mineral",
       "minecraft:material_instances": {
         "*": {
           "texture": "arw_jade_mineral",
-          "render_method": "opaque"
+          "render_method": "opaque",
+          "face_dimming": true,
+          "ambient_occlusion": true
         }
       }
     }

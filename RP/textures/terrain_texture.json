@@ -1,14 +1,12 @@
 {
-	"texture_data": {
-		"arw_jade_mineral": {
-			"textures": [
-				"textures/blocks/jade_mineral_block"
-			]
-		},
-		"arw_steel_block": {
-			"textures": [
-				"textures/blocks/steel_block"
-			]
-		}
-	}
+  "resource_pack_name": "Andy's Real Weapons",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "arw_jade_mineral": {
+      "textures": "textures/blocks/jade_mineral_block"
+    },
+    "arw_steel_block": {
+      "textures": "textures/blocks/steel_block"
+    }
+  }
 }

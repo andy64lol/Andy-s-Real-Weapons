@@ -1,4 +1,5 @@
-import { world, system } from "@minecraft/server";
+import { world, system, Player, Entity } from "@minecraft/server";
+import { Utility } from "./utility.js"; // Assuming Utility is in a separate file
 
 // ========== OPTIMIZED CONSTANTS ========== //
 const MIN_TICKS = 30 * 20;
@@ -132,15 +133,7 @@ function getRandomTimer() {
     return MIN_TICKS + Math.floor(Math.random() * (MAX_TICKS - MIN_TICKS + 1));
 }
 
-function getEquipment(player, slot) {
-    try {
-        const equippable = player.getComponent("minecraft:equippable");
-        return equippable?.getEquipment(slot)?.typeId || "";
-    } catch {
-        return "";
-    }
-}
-
+// Replaced with Utility.Getitem
 function applyEffectSafe(player, effectId, duration = 10, amplifier = 0) {
     try {
         player.addEffect(effectId, duration, { amplifier });
@@ -173,7 +166,7 @@ function processScheduledLightning() {
     for (let i = scheduledLightningStrikes.length - 1; i >= 0; i--) {
         const strike = scheduledLightningStrikes[i];
         strike.ticksLeft--;
-
+        
         if (strike.ticksLeft <= 0) {
             try {
                 const dimension = world.getDimension(strike.dimensionId);
@@ -201,7 +194,7 @@ function processMagmaWalkerBlocks() {
             try {
                 const dimension = world.getDimension(data.dimensionId);
                 const block = dimension.getBlock(data.location);
-
+                
                 if (block?.typeId === "minecraft:basalt") {
                     block.setType("minecraft:lava");
                 }
@@ -233,9 +226,10 @@ function getPlayerState(player) {
     return state;
 }
 
+// Updated to use Utility.Getitem
 function updatePlayerEquipment(player, state) {
-    state.equipment.mainHand = getEquipment(player, "mainhand");
-    state.equipment.offHand = getEquipment(player, "offhand");
+    state.equipment.mainHand = Utility.Getitem(player, "hand");
+    state.equipment.offHand = Utility.Getitem(player, "offhand");
     return state.equipment;
 }
 
@@ -246,18 +240,18 @@ function applyJungleEffects(player, inJungle) {
         : EFFECT_CONFIG.jungle.effects.base;
 
     for (const effect of effects) {
-        applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+        Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
     }
 }
 
 function applyBreezeEffects(player, inMountain) {
     for (const effect of EFFECT_CONFIG.breeze.effects.base) {
-        applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+        Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
     }
 
     if (inMountain) {
         for (const effect of EFFECT_CONFIG.breeze.effects.mountain) {
-            applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
         }
     }
 }
@@ -274,19 +268,19 @@ function applyNecklaceEffects(player, state) {
     }
     else if (offHand === "arw:necklace_of_magma") {
         for (const effect of EFFECT_CONFIG.magma.effects) {
-            applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
         }
     }
     else if (offHand === "arw:necklace_of_immortality") {
         for (const effect of EFFECT_CONFIG.immortality.effects) {
-            applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
         }
 
         try {
             const health = player.getComponent("minecraft:health");
             if (health && health.currentValue <= EFFECT_CONFIG.immortality.lowHealthThreshold) {
-                applyEffectSafe(player, "minecraft:instant_health", 1, EFFECT_CONFIG.immortality.instantHealthAmplifier);
-                applyEffectSafe(player, "minecraft:resistance", EFFECT_CONFIG.immortality.resistanceDuration, EFFECT_CONFIG.immortality.resistanceAmplifier);
+                Utility.addEffect(player, "minecraft:instant_health", 1, true, EFFECT_CONFIG.immortality.instantHealthAmplifier);
+                Utility.addEffect(player, "minecraft:resistance", EFFECT_CONFIG.immortality.resistanceDuration, true, EFFECT_CONFIG.immortality.resistanceAmplifier);
             }
         } catch (e) {
             // Ignore errors
@@ -307,18 +301,18 @@ function applyWeaponEffects(player, state) {
     const offhandHasItem = offHand !== "minecraft:air";
 
     if (ITEM_GROUPS.poleaxes.has(mainHand)) {
-        applyEffectSafe(player, "minecraft:slowness", 10, offhandHasItem ? 2 : 0);
+        Utility.addEffect(player, "minecraft:slowness", 10, true, offhandHasItem ? 2 : 0);
         if (offhandHasItem) {
-            applyEffectSafe(player, "minecraft:weakness", 10, 1);
+            Utility.addEffect(player, "minecraft:weakness", 10, true, 1);
         }
     }
     else if (ITEM_GROUPS.katanas.has(mainHand)) {
         const effects = EFFECT_CONFIG.katanas[mainHand] || [];
         for (const effect of effects) {
-            applyEffectSafe(player, `minecraft:${effect.effectId}`, 10, effect.amplifier);
+            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
         }
         if (offhandHasItem) {
-            applyEffectSafe(player, "minecraft:weakness", 10, 2);
+            Utility.addEffect(player, "minecraft:weakness", 10, true, 2);
         }
     }
     else if (mainHand === "arw:sacrificial_dagger") {
@@ -330,7 +324,7 @@ function applyWeaponEffects(player, state) {
         }
 
         if (++timerData.timer >= timerData.maxTime && !timerData.cursed) {
-            applyEffectSafe(player, "minecraft:wither", 999999, 1);
+            Utility.addEffect(player, "minecraft:wither", 999999, true, 1);
             timerData.cursed = true;
         }
     }
@@ -397,7 +391,7 @@ world.afterEvents.entityHurt.subscribe(event => {
 
         // Amethyst Spear
         if (mainHand === "arw:amethyst_spear") {
-            applyEffectSafe(target, "minecraft:weakness", EFFECT_CONFIG.amethystSpear.weaknessDuration, EFFECT_CONFIG.amethystSpear.weaknessAmplifier);
+            Utility.addEffect(target, "minecraft:weakness", EFFECT_CONFIG.amethystSpear.weaknessDuration, true, EFFECT_CONFIG.amethystSpear.weaknessAmplifier);
 
             if (Math.random() < EFFECT_CONFIG.amethystSpear.healthReductionChance) {
                 try {
@@ -419,25 +413,25 @@ world.afterEvents.entityHurt.subscribe(event => {
             state.timerData.timer = 0;
             state.timerData.maxTime = getRandomTimer();
 
-            applyEffectSafe(attacker, "minecraft:instant_health", 1);
+            Utility.addEffect(attacker, "minecraft:instant_health", 1, true, 0);
             target.applyDamage(4);
         }
         // Royal Kris
         else if (mainHand === "arw:royal_kris") {
-            applyEffectSafe(attacker, "minecraft:speed", EFFECT_CONFIG.royalKris.speedDuration);
+            Utility.addEffect(attacker, "minecraft:speed", EFFECT_CONFIG.royalKris.speedDuration, true, 0);
 
             if (Math.random() < EFFECT_CONFIG.royalKris.weaknessChance) {
-                applyEffectSafe(target, "minecraft:weakness", EFFECT_CONFIG.royalKris.weaknessDuration, 1);
+                Utility.addEffect(target, "minecraft:weakness", EFFECT_CONFIG.royalKris.weaknessDuration, true, 1);
             }
 
-            applyEffectSafe(target, "minecraft:poison", EFFECT_CONFIG.royalKris.poisonDuration);
+            Utility.addEffect(target, "minecraft:poison", EFFECT_CONFIG.royalKris.poisonDuration, true, 0);
 
             const strengthChance = offHand === "minecraft:air"
                 ? EFFECT_CONFIG.royalKris.strengthChanceMainhand
                 : EFFECT_CONFIG.royalKris.strengthChanceOffhand;
 
             if (Math.random() < strengthChance) {
-                applyEffectSafe(attacker, "minecraft:strength", 100, 1);
+                Utility.addEffect(attacker, "minecraft:strength", 100, true, 1);
             }
         }
         // Poleaxe Knockback
@@ -451,8 +445,8 @@ world.afterEvents.entityHurt.subscribe(event => {
 
             if (offhandEmpty) {
                 if (Math.random() < 0.8) {
-                    applyEffectSafe(target, "minecraft:slowness", 100, 2);
-                    applyEffectSafe(target, "minecraft:weakness", 100, 3);
+                    Utility.addEffect(target, "minecraft:slowness", 100, true, 2);
+                    Utility.addEffect(target, "minecraft:weakness", 100, true, 3);
                 }
 
                 if (Math.random() < 0.15) {
@@ -470,14 +464,14 @@ world.afterEvents.entityHurt.subscribe(event => {
         // Jade Daga Offhand
         else if (offHand === "arw:jade_daga" && mainHand && mainHand !== "minecraft:air") {
             if (ITEM_GROUPS.allowedWeapons.has(mainHand) && Math.random() < 0.10) {
-                applyEffectSafe(target, "minecraft:weakness", 60, 255);
-                applyEffectSafe(target, "minecraft:slowness", 60, 255);
+                Utility.addEffect(target, "minecraft:weakness", 60, true, 255);
+                Utility.addEffect(target, "minecraft:slowness", 60, true, 255);
 
                 try {
                     const equippable = attacker.getComponent("minecraft:equippable");
                     const offhandItem = equippable?.getEquipment("offhand");
                     if (offhandItem) {
-                        offhandItem.setDamageValue(offhandItem.getDamage() + 5);
+                        Utility.reduceDurability(attacker, offhandItem, 5);
                     }
                 } catch (e) {
                     // Ignore error
@@ -490,13 +484,13 @@ world.afterEvents.entityHurt.subscribe(event => {
             const venomDuration = state.biomeData.inJungle
                 ? EFFECT_CONFIG.jungle.venomDuration
                 : 50;
-            applyEffectSafe(target, "minecraft:poison", venomDuration);
+            Utility.addEffect(target, "minecraft:poison", venomDuration, true, 0);
         }
 
         // Breeze Necklace Attack Effect
         if (offHand === "arw:necklace_of_breeze") {
             if (Math.random() < EFFECT_CONFIG.breeze.launchChance) {
-                applyEffectSafe(target, "minecraft:levitation", EFFECT_CONFIG.breeze.levitationDuration, 0);
+                Utility.addEffect(target, "minecraft:levitation", EFFECT_CONFIG.breeze.levitationDuration, true, 0);
             }
         }
     } catch (e) {

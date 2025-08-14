@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:jade_staff"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" JB",
+			" J ",
+			"S  "
+		],
+		"key": {
+			"J": {
+				"item": "arw:jade_gem"
+			},
+			"B": {
+				"item": "arw:jade_gem_brute"
+			},
+			"S": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "arw:jade_staff",
+			"count": 1
+		},
+		"unlock": {
+			"context": "None",
+			"recipes": [
+				"arw:flint_spear_recipe"
+			],
+			"items": [
+				"minecraft:flint",
+				"minecraft:string",
+				"minecraft:stick"
+			]
+		}
+	}
+}

@@ -1,5 +1,5 @@
-import { world, system, Player, Entity } from "@minecraft/server";
-import { Utility } from "./utility.js"; // Assuming Utility is in a separate file
+import { world, system } from "@minecraft/server";
+import { Utility } from "./utility.js";
 
 // ========== OPTIMIZED CONSTANTS ========== //
 const MIN_TICKS = 30 * 20;
@@ -133,16 +133,6 @@ function getRandomTimer() {
     return MIN_TICKS + Math.floor(Math.random() * (MAX_TICKS - MIN_TICKS + 1));
 }
 
-// Replaced with Utility.Getitem
-function applyEffectSafe(player, effectId, duration = 10, amplifier = 0) {
-    try {
-        player.addEffect(effectId, duration, { amplifier });
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
 function isInJungleBiome(player) {
     try {
         const block = player.dimension.getBlock(player.location);
@@ -226,7 +216,6 @@ function getPlayerState(player) {
     return state;
 }
 
-// Updated to use Utility.Getitem
 function updatePlayerEquipment(player, state) {
     state.equipment.mainHand = Utility.Getitem(player, "hand");
     state.equipment.offHand = Utility.Getitem(player, "offhand");

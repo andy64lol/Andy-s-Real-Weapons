@@ -133,6 +133,9 @@
 		},
 		"arw_wind_poleaxe": {
 			"textures": "textures/items/wind_poleaxe"
+		},
+		"arw_jade_staff": {
+			"textures": "textures/items/jade_staff"
 		}
 	}
 }

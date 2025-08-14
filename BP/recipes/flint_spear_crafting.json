@@ -28,7 +28,7 @@
 			"count": 1
 		},
 		"unlock": {
-			"context": "player",
+			"context": "None",
 			"recipes": [
 				"arw:flint_spear_recipe"
 			],

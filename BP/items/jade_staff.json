@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:jade_staff",
+			"menu_category": {
+				"category": "equipment",
+				"group": "minecraft:itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:durability": {
+				"max_durability": 251
+			},
+			"minecraft:icon": "arw_jade_staff",
+			"minecraft:damage": 6,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "bow"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"arw:jade_gem"
+						],
+						"repair_amount": "query.max_durability * 0.25"
+					},
+					{
+						"items": [
+							"arw:jade_staff"
+						],
+						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:use_duration": 1.5,
+			"minecraft:use_animation": "spear"
+		}
+	}
+}

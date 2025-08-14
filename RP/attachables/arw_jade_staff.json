@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "arw:jade_staff",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/jade_staff",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.item_sprite"
+			},
+			"scripts": {
+				"pre_animation": [
+					"v.third_person = 1 - q.is_first_person;",
+					"v.position = q.is_first_person ? [0,4.5,0] : [0,8,0];",
+					"v.rotation = q.is_first_person ? [0,-90,-20] : [0,-90,0];",
+					"v.scale = q.is_first_person ? 0.8 : 0.7;"
+				]
+			},
+			"render_controllers": [
+				"controller.render.item_default"
+			]
+		}
+	}
+}

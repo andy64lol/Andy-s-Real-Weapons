@@ -2,26 +2,42 @@
   "format_version": "1.21.100",
   "minecraft:block": {
     "description": {
-      "identifier": "arw:steel_block",
+      "identifier": "amb:steel_block",
       "menu_category": {
         "category": "construction",
+        "group": "construction",
         "is_hidden_in_commands": false
       }
     },
     "components": {
-      "minecraft:light_dampening": 1,
+      "minecraft:light_dampening": 14,
       "minecraft:light_emission": 0,
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 5.0
+        "item_specific_speeds": [
+          {
+            "destroy_speed": 5.3,
+            "item": "minecraft:iron_pickaxe"
+          },
+          {
+            "destroy_speed": 3.2,
+            "item": "minecraft:diamond_pickaxe"
+          },
+          {
+            "destroy_speed": 2.6,
+            "item": "minecraft:netherite_pickaxe"
+          }
+        ]
       },
       "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 15
+        "explosion_resistance": 9.0
       },
-      "minecraft:map_color": "#a0a0a0",
-      "minecraft:required_tool": {
-        "tool_type": "pickaxe",
-        "tier": 2
+      "minecraft:friction": 0.4,
+      "minecraft:map_color": "#A6A5A5",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 0,
+        "destroy_chance_modifier": 0
       },
+      "minecraft:loot": "loot_tables/blocks/steel_block.json",
       "minecraft:block_sounds": {
         "placement_sound": "stone.place",
         "break_sound": "stone.break",
@@ -29,15 +45,23 @@
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
       },
-      "minecraft:loot": "loot_tables/blocks/steel_block.json",
-      "minecraft:geometry": "geometry.block.steel_block",
+      "minecraft:geometry": "minecraft:geometry.full_block",
       "minecraft:material_instances": {
-        "*": {
+        "sides": {
           "texture": "arw_steel_block",
-          "render_method": "opaque",
+          "ambient_occlusion": true,
           "face_dimming": true,
-          "ambient_occlusion": true
+          "isotropic": false,
+          "render_method": "opaque",
+          "tint_method": "none"
         }
+      },
+      "minecraft:redstone_conductivity": {
+        "allows_wire_to_step_down": true,
+        "redstone_conductor": true
+      },
+      "minecraft:entity_fall_on": {
+        "min_fall_distance": 20
       }
     }
   }

@@ -13,7 +13,16 @@
       "minecraft:light_dampening": 1,
       "minecraft:light_emission": 4,
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 3.0
+        "item_specific_speeds": [
+          {
+            "destroy_speed": 7,
+            "item": "minecraft:diamond_pickaxe"
+          },
+          {
+            "destroy_speed": 4,
+            "item": "minecraft:netherite_pickaxe"
+          }
+        ]
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 6.0
@@ -24,10 +33,6 @@
         "catch_chance_modifier": 0,
         "destroy_chance_modifier": 0
       },
-      "minecraft:required_tool": {
-        "tool_type": "pickaxe",
-        "tier": 3
-      },
       "minecraft:loot": "loot_tables/blocks/jade_mineral.json",
       "minecraft:block_sounds": {
         "placement_sound": "stone.place",
@@ -36,13 +41,15 @@
         "hit_sound": "stone.hit",
         "fall_sound": "stone.fall"
       },
-      "minecraft:geometry": "geometry.arw_jade_mineral",
+      "minecraft:geometry": "minecraft:geometry.full_block",
       "minecraft:material_instances": {
-        "*": {
+        "sides": {
           "texture": "arw_jade_mineral",
-          "render_method": "opaque",
+          "ambient_occlusion": true,
           "face_dimming": true,
-          "ambient_occlusion": true
+          "isotropic": false,
+          "render_method": "opaque",
+          "tint_method": "none"
         }
       }
     }

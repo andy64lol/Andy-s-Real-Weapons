@@ -35,6 +35,15 @@
 						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
 					}
 				]
+			},
+			"minecraft:projectile": {
+				"minimum_critical_power": 3.0,
+				"projectile_entity": "minecraft:wind_charge_projectile"
+			},
+			"minecraft:shooter": {
+				"max_draw_duration": 0.1,
+				"scale_power_by_draw_duration": true,
+				"charge_on_draw": false
 			}
 		}
 	}

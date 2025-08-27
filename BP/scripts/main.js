@@ -1,11 +1,11 @@
 import { world, system } from "@minecraft/server";
-import { Utility } from "./utility.js";
 
 // ========== OPTIMIZED CONSTANTS ========== //
 const MIN_TICKS = 30 * 20;
 const MAX_TICKS = 50 * 20;
 const MAGMA_WALKER_COOLDOWN = 2;
 const BIOME_CHECK_INTERVAL = 5 * 20;
+const DEBUG = true;
 
 // Consolidated effect configurations
 const EFFECT_CONFIG = {
@@ -128,73 +128,240 @@ const shogunKatanaPlayers = new Set();
 const magmaWalkerBlocks = new Map();
 let tickCounter = 0;
 
-// ========== OPTIMIZED HELPER FUNCTIONS ========== //
+// ========== HELPER FUNCTIONS ========== //
+function log(...msg) { DEBUG && console.warn(...msg); }
+
 function getRandomTimer() {
     return MIN_TICKS + Math.floor(Math.random() * (MAX_TICKS - MIN_TICKS + 1));
 }
 
-function isInJungleBiome(player) {
-    try {
-        const block = player.dimension.getBlock(player.location);
-        return block?.biomeId?.includes("jungle") || block?.biomeId?.includes("bamboo");
-    } catch {
-        return false;
+function updateBiomeState(player, state) {
+    if (tickCounter - state.biomeData.lastCheck >= BIOME_CHECK_INTERVAL) {
+        try {
+            const block = player.dimension.getBlock(player.location);
+            state.biomeData.inJungle = block?.biomeId?.includes("jungle") || 
+                                       block?.biomeId?.includes("bamboo");
+            state.biomeData.inMountain = ITEM_GROUPS.mountainBiomes.has(block?.biomeId);
+            state.biomeData.lastCheck = tickCounter;
+        } catch (e) {
+            log(`Biome check error: ${e}`);
+        }
     }
 }
 
-function isInMountainBiome(player) {
-    try {
-        const block = player.dimension.getBlock(player.location);
-        return block?.biomeId && ITEM_GROUPS.mountainBiomes.has(block.biomeId);
-    } catch {
-        return false;
+// ========== TICK HANDLERS ========== //
+function highFrequencyTasks() {
+    tickCounter++;
+    processScheduledLightning();
+    
+    for (const player of world.getAllPlayers()) {
+        try {
+            const state = getPlayerState(player);
+            updatePlayerEquipment(player, state);
+            
+            // Shogun Katana theme handling
+            const { mainHand } = state.equipment;
+            if (mainHand === "arw:shogun_katana" && !shogunKatanaPlayers.has(player.id)) {
+                player.playSound("arw.shogun_theme");
+                shogunKatanaPlayers.add(player.id);
+            } else if (mainHand !== "arw:shogun_katana") {
+                shogunKatanaPlayers.delete(player.id);
+            }
+        } catch (e) {
+            log(`HighFreq error: ${e}`);
+        }
     }
 }
 
-// ========== OPTIMIZED EVENT PROCESSORS ========== //
-function processScheduledLightning() {
-    for (let i = scheduledLightningStrikes.length - 1; i >= 0; i--) {
-        const strike = scheduledLightningStrikes[i];
-        strike.ticksLeft--;
-        
-        if (strike.ticksLeft <= 0) {
-            try {
-                const dimension = world.getDimension(strike.dimensionId);
-                const target = dimension.getEntity(strike.targetId);
+function lowFrequencyTasks() {
+    processMagmaWalkerBlocks();
+    
+    for (const player of world.getAllPlayers()) {
+        try {
+            const state = getPlayerState(player);
+            updateBiomeState(player, state);
+            applyNecklaceEffects(player, state);
+            applyWeaponEffects(player, state);
+        } catch (e) {
+            log(`LowFreq error: ${e}`);
+        }
+    }
+}
 
-                if (target) {
-                    dimension.spawnEntity("minecraft:lightning_bolt", target.location);
-                    if (Math.random() < 0.10) {
-                        target.applyDamage(1000, { cause: "magic" });
+// Initialize tick handlers
+system.runInterval(highFrequencyTasks, 1);
+system.runInterval(lowFrequencyTasks, 100); // 5s interval
+
+// ========== EVENT HANDLERS ========== //
+world.afterEvents.entityHurt.subscribe(handleEntityHurt);
+world.afterEvents.playerLeave.subscribe(cleanPlayerState);
+
+function handleEntityHurt(event) {
+    try {
+        const attacker = event.damageSource.damagingEntity;
+        const target = event.hurtEntity;
+
+        if (!attacker || !attacker.isPlayer || !target) return;
+
+        const state = playerStates.get(attacker.id) || getPlayerState(attacker);
+        const { mainHand, offHand } = state.equipment;
+
+        // Amethyst Spear
+        if (mainHand === "arw:amethyst_spear") {
+            target.addEffect("minecraft:weakness", EFFECT_CONFIG.amethystSpear.weaknessDuration, { 
+                showParticles: true, 
+                amplifier: EFFECT_CONFIG.amethystSpear.weaknessAmplifier 
+            });
+
+            if (Math.random() < EFFECT_CONFIG.amethystSpear.healthReductionChance) {
+                try {
+                    const health = target.getComponent("minecraft:health");
+                    if (health) {
+                        health.setCurrentValue(Math.max(1, health.currentValue - 
+                            EFFECT_CONFIG.amethystSpear.healthReductionAmount));
                     }
+                } catch {
+                    target.applyDamage(EFFECT_CONFIG.amethystSpear.healthReductionAmount);
                 }
-            } catch (e) {
-                // Ignore errors
-            } finally {
-                scheduledLightningStrikes.splice(i, 1);
             }
         }
+        // Sacrificial Dagger
+        else if (mainHand === "arw:sacrificial_dagger") {
+            if (state.timerData.cursed) {
+                attacker.removeEffect("wither");
+                state.timerData.cursed = false;
+            }
+            state.timerData.timer = 0;
+            state.timerData.maxTime = getRandomTimer();
+
+            attacker.addEffect("minecraft:instant_health", 1, { 
+                showParticles: true, 
+                amplifier: 0 
+            });
+            target.applyDamage(4);
+        }
+        // Royal Kris
+        else if (mainHand === "arw:royal_kris") {
+            attacker.addEffect("minecraft:speed", EFFECT_CONFIG.royalKris.speedDuration, { 
+                showParticles: true, 
+                amplifier: 0 
+            });
+
+            if (Math.random() < EFFECT_CONFIG.royalKris.weaknessChance) {
+                target.addEffect("minecraft:weakness", EFFECT_CONFIG.royalKris.weaknessDuration, { 
+                    showParticles: true, 
+                    amplifier: 1 
+                });
+            }
+
+            target.addEffect("minecraft:poison", EFFECT_CONFIG.royalKris.poisonDuration, { 
+                showParticles: true, 
+                amplifier: 0 
+            });
+
+            const strengthChance = offHand === "minecraft:air"
+                ? EFFECT_CONFIG.royalKris.strengthChanceMainhand
+                : EFFECT_CONFIG.royalKris.strengthChanceOffhand;
+
+            if (Math.random() < strengthChance) {
+                attacker.addEffect("minecraft:strength", 100, { 
+                    showParticles: true, 
+                    amplifier: 1 
+                });
+            }
+        }
+        // Poleaxe Knockback
+        else if (ITEM_GROUPS.poleaxes.has(mainHand)) {
+            const direction = attacker.getViewDirection();
+            target.applyKnockback(direction.x, direction.z, 1.5, 0.5);
+        }
+        // Shogun Katana
+        else if (mainHand === "arw:shogun_katana") {
+            const offhandEmpty = offHand === "minecraft:air";
+
+            if (offhandEmpty) {
+                if (Math.random() < 0.8) {
+                    target.addEffect("minecraft:slowness", 100, { 
+                        showParticles: true, 
+                        amplifier: 2 
+                    });
+                    target.addEffect("minecraft:weakness", 100, { 
+                        showParticles: true, 
+                        amplifier: 3 
+                    });
+                }
+
+                if (Math.random() < 0.15) {
+                    scheduledLightningStrikes.push({
+                        targetId: target.id,
+                        dimensionId: target.dimension.id,
+                        ticksLeft: 100
+                    });
+                }
+            }
+
+            const direction = attacker.getViewDirection();
+            target.applyKnockback(direction.x, direction.z, 1.125, 0.5);
+        }
+        // Jade Daga Offhand
+        else if (offHand === "arw:jade_daga" && mainHand && mainHand !== "minecraft:air") {
+            if (ITEM_GROUPS.allowedWeapons.has(mainHand) && Math.random() < 0.10) {
+                target.addEffect("minecraft:weakness", 60, { 
+                    showParticles: true, 
+                    amplifier: 255 
+                });
+                target.addEffect("minecraft:slowness", 60, { 
+                    showParticles: true, 
+                    amplifier: 255 
+                });
+
+                try {
+                    const equippable = attacker.getComponent("minecraft:equippable");
+                    const offhandItem = equippable?.getEquipment("offhand");
+                    if (offhandItem) {
+                        const dur = offhandItem.getComponent('durability');
+                        const RemainingDurability = dur.maxDurability - dur.damage;
+                        if (RemainingDurability > 0) {
+                            dur.damage += 5;
+                            equippable.setEquipment("offhand", offhandItem);
+                        } else {
+                            equippable.setEquipment("offhand", undefined);
+                        }
+                    }
+                } catch (e) {
+                    log(`Jade Daga error: ${e}`);
+                }
+            }
+        }
+
+        // Jungle Necklace Attack Effect
+        if (offHand === "arw:necklace_of_jungle") {
+            const venomDuration = state.biomeData.inJungle
+                ? EFFECT_CONFIG.jungle.venomDuration
+                : 50;
+            target.addEffect("minecraft:poison", venomDuration, { 
+                showParticles: true, 
+                amplifier: 0 
+            });
+        }
+
+        // Breeze Necklace Attack Effect
+        if (offHand === "arw:necklace_of_breeze") {
+            if (Math.random() < EFFECT_CONFIG.breeze.launchChance) {
+                target.addEffect("minecraft:levitation", EFFECT_CONFIG.breeze.levitationDuration, { 
+                    showParticles: true, 
+                    amplifier: 0 
+                });
+            }
+        }
+    } catch (e) {
+        log(`EntityHurt error: ${e}`);
     }
 }
 
-function processMagmaWalkerBlocks() {
-    const currentTime = Date.now();
-    for (const [key, data] of magmaWalkerBlocks) {
-        if (currentTime >= data.expireTime) {
-            try {
-                const dimension = world.getDimension(data.dimensionId);
-                const block = dimension.getBlock(data.location);
-                
-                if (block?.typeId === "minecraft:basalt") {
-                    block.setType("minecraft:lava");
-                }
-            } catch (e) {
-                // Ignore errors
-            } finally {
-                magmaWalkerBlocks.delete(key);
-            }
-        }
-    }
+function cleanPlayerState({ playerId }) {
+    playerStates.delete(playerId);
+    shogunKatanaPlayers.delete(playerId);
 }
 
 // ========== PLAYER STATE MANAGEMENT ========== //
@@ -217,9 +384,20 @@ function getPlayerState(player) {
 }
 
 function updatePlayerEquipment(player, state) {
-    state.equipment.mainHand = Utility.Getitem(player, "hand");
-    state.equipment.offHand = Utility.Getitem(player, "offhand");
-    return state.equipment;
+    try {
+        const equipment = player.getComponent("equippable");
+        state.equipment.mainHand = equipment.getEquipment("Mainhand")?.typeId || "minecraft:air";
+        state.equipment.offHand = equipment.getEquipment("Offhand")?.typeId || "minecraft:air";
+        
+        // Reset cooldowns when unequipped
+        if (state.equipment.offHand !== "arw:necklace_of_magma") {
+            state.cooldowns.magmaWalker = 0;
+        }
+        return state.equipment;
+    } catch (e) {
+        log(`Equipment error: ${e}`);
+        return state.equipment;
+    }
 }
 
 // ========== NECKLACE EFFECTS ========== //
@@ -229,18 +407,27 @@ function applyJungleEffects(player, inJungle) {
         : EFFECT_CONFIG.jungle.effects.base;
 
     for (const effect of effects) {
-        Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+        player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+            showParticles: true, 
+            amplifier: effect.amplifier 
+        });
     }
 }
 
 function applyBreezeEffects(player, inMountain) {
     for (const effect of EFFECT_CONFIG.breeze.effects.base) {
-        Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+        player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+            showParticles: true, 
+            amplifier: effect.amplifier 
+        });
     }
 
     if (inMountain) {
         for (const effect of EFFECT_CONFIG.breeze.effects.mountain) {
-            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+            player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+                showParticles: true, 
+                amplifier: effect.amplifier 
+            });
         }
     }
 }
@@ -249,37 +436,41 @@ function applyNecklaceEffects(player, state) {
     const { offHand } = state.equipment;
 
     if (offHand === "arw:necklace_of_jungle") {
-        if (tickCounter - state.biomeData.lastCheck > BIOME_CHECK_INTERVAL) {
-            state.biomeData.inJungle = isInJungleBiome(player);
-            state.biomeData.lastCheck = tickCounter;
-        }
         applyJungleEffects(player, state.biomeData.inJungle);
     }
     else if (offHand === "arw:necklace_of_magma") {
         for (const effect of EFFECT_CONFIG.magma.effects) {
-            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+            player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+                showParticles: true, 
+                amplifier: effect.amplifier 
+            });
         }
     }
     else if (offHand === "arw:necklace_of_immortality") {
         for (const effect of EFFECT_CONFIG.immortality.effects) {
-            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+            player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+                showParticles: true, 
+                amplifier: effect.amplifier 
+            });
         }
 
         try {
             const health = player.getComponent("minecraft:health");
             if (health && health.currentValue <= EFFECT_CONFIG.immortality.lowHealthThreshold) {
-                Utility.addEffect(player, "minecraft:instant_health", 1, true, EFFECT_CONFIG.immortality.instantHealthAmplifier);
-                Utility.addEffect(player, "minecraft:resistance", EFFECT_CONFIG.immortality.resistanceDuration, true, EFFECT_CONFIG.immortality.resistanceAmplifier);
+                player.addEffect("minecraft:instant_health", 1, { 
+                    showParticles: true, 
+                    amplifier: EFFECT_CONFIG.immortality.instantHealthAmplifier 
+                });
+                player.addEffect("minecraft:resistance", EFFECT_CONFIG.immortality.resistanceDuration, { 
+                    showParticles: true, 
+                    amplifier: EFFECT_CONFIG.immortality.resistanceAmplifier 
+                });
             }
         } catch (e) {
-            // Ignore errors
+            log(`Immortality error: ${e}`);
         }
     }
     else if (offHand === "arw:necklace_of_breeze") {
-        if (tickCounter - state.biomeData.lastCheck > BIOME_CHECK_INTERVAL) {
-            state.biomeData.inMountain = isInMountainBiome(player);
-            state.biomeData.lastCheck = tickCounter;
-        }
         applyBreezeEffects(player, state.biomeData.inMountain);
     }
 }
@@ -290,18 +481,30 @@ function applyWeaponEffects(player, state) {
     const offhandHasItem = offHand !== "minecraft:air";
 
     if (ITEM_GROUPS.poleaxes.has(mainHand)) {
-        Utility.addEffect(player, "minecraft:slowness", 10, true, offhandHasItem ? 2 : 0);
+        player.addEffect("minecraft:slowness", 10, { 
+            showParticles: true, 
+            amplifier: offhandHasItem ? 2 : 0 
+        });
         if (offhandHasItem) {
-            Utility.addEffect(player, "minecraft:weakness", 10, true, 1);
+            player.addEffect("minecraft:weakness", 10, { 
+                showParticles: true, 
+                amplifier: 1 
+            });
         }
     }
     else if (ITEM_GROUPS.katanas.has(mainHand)) {
         const effects = EFFECT_CONFIG.katanas[mainHand] || [];
         for (const effect of effects) {
-            Utility.addEffect(player, `minecraft:${effect.effectId}`, 10, true, effect.amplifier);
+            player.addEffect(`minecraft:${effect.effectId}`, 10, { 
+                showParticles: true, 
+                amplifier: effect.amplifier 
+            });
         }
         if (offhandHasItem) {
-            Utility.addEffect(player, "minecraft:weakness", 10, true, 2);
+            player.addEffect("minecraft:weakness", 10, { 
+                showParticles: true, 
+                amplifier: 2 
+            });
         }
     }
     else if (mainHand === "arw:sacrificial_dagger") {
@@ -313,7 +516,10 @@ function applyWeaponEffects(player, state) {
         }
 
         if (++timerData.timer >= timerData.maxTime && !timerData.cursed) {
-            Utility.addEffect(player, "minecraft:wither", 999999, true, 1);
+            player.addEffect("minecraft:wither", 999999, { 
+                showParticles: true, 
+                amplifier: 1 
+            });
             timerData.cursed = true;
         }
     }
@@ -326,166 +532,51 @@ function applyWeaponEffects(player, state) {
     }
 }
 
-// ========== EVENT HANDLERS ========== //
-system.runInterval(() => {
-    tickCounter++;
-    processScheduledLightning();
-    processMagmaWalkerBlocks();
+// ========== SCHEDULED EFFECT PROCESSORS ========== //
+function processScheduledLightning() {
+    for (let i = scheduledLightningStrikes.length - 1; i >= 0; i--) {
+        const strike = scheduledLightningStrikes[i];
+        strike.ticksLeft--;
+        
+        if (strike.ticksLeft <= 0) {
+            try {
+                const dimension = world.getDimension(strike.dimensionId);
+                const target = dimension.getEntity(strike.targetId);
 
-    for (const player of world.getAllPlayers()) {
-        try {
-            const state = getPlayerState(player);
-            const equipment = updatePlayerEquipment(player, state);
-
-            // Shogun Katana Theme
-            if (equipment.mainHand === "arw:shogun_katana") {
-                if (!shogunKatanaPlayers.has(player.id)) {
-                    player.playSound("arw.shogun_theme");
-                    shogunKatanaPlayers.add(player.id);
-                }
-            } else {
-                shogunKatanaPlayers.delete(player.id);
-            }
-
-            // Apply necklace effects
-            if (ITEM_GROUPS.necklaces.has(equipment.offHand)) {
-                applyNecklaceEffects(player, state);
-
-                // Magma Walker
-                if (equipment.offHand === "arw:necklace_of_magma") {
-                    if (state.cooldowns.magmaWalker++ >= MAGMA_WALKER_COOLDOWN) {
-                        state.cooldowns.magmaWalker = 0;
-                        handleMagmaWalker(player);
+                if (target) {
+                    dimension.spawnEntity("minecraft:lightning_bolt", target.location);
+                    if (Math.random() < 0.10) {
+                        target.applyDamage(1000, { cause: "magic" });
                     }
                 }
+            } catch (e) {
+                log(`Lightning error: ${e}`);
+            } finally {
+                scheduledLightningStrikes.splice(i, 1);
             }
-
-            // Apply weapon effects
-            applyWeaponEffects(player, state);
-        } catch (e) {
-            console.warn(`Error processing player ${player.name}: ${e}`);
         }
     }
-}, 1);
+}
 
-world.afterEvents.entityHurt.subscribe(event => {
-    try {
-        const attacker = event.damageSource.damagingEntity;
-        const target = event.hurtEntity;
-
-        if (!attacker || !attacker.isPlayer || !target) return;
-
-        const state = playerStates.get(attacker.id) || getPlayerState(attacker);
-        const { mainHand, offHand } = state.equipment;
-
-        // Amethyst Spear
-        if (mainHand === "arw:amethyst_spear") {
-            Utility.addEffect(target, "minecraft:weakness", EFFECT_CONFIG.amethystSpear.weaknessDuration, true, EFFECT_CONFIG.amethystSpear.weaknessAmplifier);
-
-            if (Math.random() < EFFECT_CONFIG.amethystSpear.healthReductionChance) {
-                try {
-                    const health = target.getComponent("minecraft:health");
-                    if (health) {
-                        health.setCurrentValue(Math.max(1, health.currentValue - EFFECT_CONFIG.amethystSpear.healthReductionAmount));
-                    }
-                } catch {
-                    target.applyDamage(EFFECT_CONFIG.amethystSpear.healthReductionAmount);
+function processMagmaWalkerBlocks() {
+    const currentTime = Date.now();
+    for (const [key, data] of magmaWalkerBlocks) {
+        if (currentTime >= data.expireTime) {
+            try {
+                const dimension = world.getDimension(data.dimensionId);
+                const block = dimension.getBlock(data.location);
+                
+                if (block?.typeId === "minecraft:basalt") {
+                    block.setType("minecraft:lava");
                 }
+            } catch (e) {
+                log(`MagmaWalker revert error: ${e}`);
+            } finally {
+                magmaWalkerBlocks.delete(key);
             }
         }
-        // Sacrificial Dagger
-        else if (mainHand === "arw:sacrificial_dagger") {
-            if (state.timerData.cursed) {
-                attacker.removeEffect("wither");
-                state.timerData.cursed = false;
-            }
-            state.timerData.timer = 0;
-            state.timerData.maxTime = getRandomTimer();
-
-            Utility.addEffect(attacker, "minecraft:instant_health", 1, true, 0);
-            target.applyDamage(4);
-        }
-        // Royal Kris
-        else if (mainHand === "arw:royal_kris") {
-            Utility.addEffect(attacker, "minecraft:speed", EFFECT_CONFIG.royalKris.speedDuration, true, 0);
-
-            if (Math.random() < EFFECT_CONFIG.royalKris.weaknessChance) {
-                Utility.addEffect(target, "minecraft:weakness", EFFECT_CONFIG.royalKris.weaknessDuration, true, 1);
-            }
-
-            Utility.addEffect(target, "minecraft:poison", EFFECT_CONFIG.royalKris.poisonDuration, true, 0);
-
-            const strengthChance = offHand === "minecraft:air"
-                ? EFFECT_CONFIG.royalKris.strengthChanceMainhand
-                : EFFECT_CONFIG.royalKris.strengthChanceOffhand;
-
-            if (Math.random() < strengthChance) {
-                Utility.addEffect(attacker, "minecraft:strength", 100, true, 1);
-            }
-        }
-        // Poleaxe Knockback
-        else if (ITEM_GROUPS.poleaxes.has(mainHand)) {
-            const direction = attacker.getViewDirection();
-            target.applyKnockback(direction.x, direction.z, 1.5, 0.5);
-        }
-        // Shogun Katana
-        else if (mainHand === "arw:shogun_katana") {
-            const offhandEmpty = offHand === "minecraft:air";
-
-            if (offhandEmpty) {
-                if (Math.random() < 0.8) {
-                    Utility.addEffect(target, "minecraft:slowness", 100, true, 2);
-                    Utility.addEffect(target, "minecraft:weakness", 100, true, 3);
-                }
-
-                if (Math.random() < 0.15) {
-                    scheduledLightningStrikes.push({
-                        targetId: target.id,
-                        dimensionId: target.dimension.id,
-                        ticksLeft: 100
-                    });
-                }
-            }
-
-            const direction = attacker.getViewDirection();
-            target.applyKnockback(direction.x, direction.z, 1.125, 0.5);
-        }
-        // Jade Daga Offhand
-        else if (offHand === "arw:jade_daga" && mainHand && mainHand !== "minecraft:air") {
-            if (ITEM_GROUPS.allowedWeapons.has(mainHand) && Math.random() < 0.10) {
-                Utility.addEffect(target, "minecraft:weakness", 60, true, 255);
-                Utility.addEffect(target, "minecraft:slowness", 60, true, 255);
-
-                try {
-                    const equippable = attacker.getComponent("minecraft:equippable");
-                    const offhandItem = equippable?.getEquipment("offhand");
-                    if (offhandItem) {
-                        Utility.reduceDurability(attacker, offhandItem, 5);
-                    }
-                } catch (e) {
-                    // Ignore error
-                }
-            }
-        }
-
-        // Jungle Necklace Attack Effect
-        if (offHand === "arw:necklace_of_jungle") {
-            const venomDuration = state.biomeData.inJungle
-                ? EFFECT_CONFIG.jungle.venomDuration
-                : 50;
-            Utility.addEffect(target, "minecraft:poison", venomDuration, true, 0);
-        }
-
-        // Breeze Necklace Attack Effect
-        if (offHand === "arw:necklace_of_breeze") {
-            if (Math.random() < EFFECT_CONFIG.breeze.launchChance) {
-                Utility.addEffect(target, "minecraft:levitation", EFFECT_CONFIG.breeze.levitationDuration, true, 0);
-            }
-        }
-    } catch (e) {
-        console.warn(`Error in entityHurt event: ${e}`);
     }
-});
+}
 
 // ========== MAGMA WALKER FUNCTION ========== //
 function handleMagmaWalker(player) {
@@ -511,6 +602,6 @@ function handleMagmaWalker(player) {
             }
         }
     } catch (e) {
-        console.warn(`Magma Walker error: ${e}`);
+        log(`MagmaWalker error: ${e}`);
     }
 }

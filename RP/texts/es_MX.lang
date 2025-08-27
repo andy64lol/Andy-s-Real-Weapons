@@ -42,3 +42,5 @@ item.arw:necklace_of_magma=Collar de magma
 item.arw:elixir_of_breeze=Elixir de la brisa
 item.arw:necklace_of_breeze=Collar de la brisa
 item.arw:wind_poleaxe=Hacha de asta larga del viento
+tile.arw:jade_ore.name=Mena de jade
+tile.arw:steel_block.name=Bloque de acero

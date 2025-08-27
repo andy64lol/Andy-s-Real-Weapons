@@ -2,25 +2,32 @@
 	"format_version": "1.21.100",
 	"sound_definitions": {
 		"arw.shogun_theme": {
-			"category": "music",
+			"__use_legacy_max_distance": true,
+			"category": "player",
+			"max_distance": 40.10,
+			"min_distance": 1.0,
 			"sounds": [
 				{
-					"name": "sounds/shogun_theme",
+					"name": "sounds/katana_draw.ogg",
+					"pitch": 0.9,
+					"is3D": false,
 					"stream": true,
-					"load_on_low_memory": true,
-					"volume": 0.8,
-					"pitch": 1.0,
-					"weight": 1
+					"volume": 2.0
 				}
 			]
 		},
 		"arw.katana_unsheathe": {
 			"category": "player",
+			"__use_legacy_max_distance": true,
+			"max_distance": 16.0,
+			"min_distance": 1.0,
 			"sounds": [
 				{
-					"name": "sounds/katana_draw",
-					"volume": 1.0,
-					"pitch": 0.9
+					"name":"sounds/katana_draw.ogg",
+					"is3D": false,
+					"pitch": 0.9,
+					"stream": true,
+					"volume": 2.0
 				}
 			]
 		}

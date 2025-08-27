@@ -13,6 +13,7 @@
       "minecraft:light_dampening": 1,
       "minecraft:light_emission": 4,
       "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 19,
         "item_specific_speeds": [
           {
             "destroy_speed": 7,

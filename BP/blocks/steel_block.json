@@ -13,6 +13,7 @@
       "minecraft:light_dampening": 14,
       "minecraft:light_emission": 0,
       "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 23,
         "item_specific_speeds": [
           {
             "destroy_speed": 5.3,
@@ -54,7 +55,9 @@
           "isotropic": false,
           "render_method": "opaque",
           "tint_method": "none"
-        }
+        },
+        "down": "sides",
+        "north": "down"
       },
       "minecraft:redstone_conductivity": {
         "allows_wire_to_step_down": true,

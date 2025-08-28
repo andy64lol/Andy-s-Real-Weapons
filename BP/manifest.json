@@ -48,17 +48,6 @@
 				0
 			],
 			"entry": "scripts/main.js"
-		},
-		{
-			"type": "script",
-			"language": "javascript",
-			"uuid": "4cba1c75-35d2-48e3-a9c2-8c8f9d01e5e9",
-			"version": [
-				1,
-				0,
-				0
-			],
-			"entry": "scripts/utility.js"
 		}
 	],
 	"dependencies": [

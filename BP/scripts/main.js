@@ -3,7 +3,7 @@ import { world, system } from "@minecraft/server";
 // ========== OPTIMIZED CONSTANTS ========== //
 const MIN_TICKS = 30 * 20;
 const MAX_TICKS = 50 * 20;
-const MAGMA_WALKER_COOLDOWN = 2;
+const MAGMA_WALKER_COOLDOWN = 40; // Changed to ticks (2 seconds)
 const BIOME_CHECK_INTERVAL = 5 * 20;
 const DEBUG = true;
 
@@ -129,7 +129,11 @@ const magmaWalkerBlocks = new Map();
 let tickCounter = 0;
 
 // ========== HELPER FUNCTIONS ========== //
-function log(...msg) { DEBUG && console.warn(...msg); }
+function log(...msg) { 
+    if (DEBUG && typeof console !== "undefined") {
+        console.warn(...msg); 
+    }
+}
 
 function getRandomTimer() {
     return MIN_TICKS + Math.floor(Math.random() * (MAX_TICKS - MIN_TICKS + 1));
@@ -166,6 +170,16 @@ function highFrequencyTasks() {
                 shogunKatanaPlayers.add(player.id);
             } else if (mainHand !== "arw:shogun_katana") {
                 shogunKatanaPlayers.delete(player.id);
+            }
+
+            // Magma Walker ability
+            if (state.equipment.offHand === "arw:necklace_of_magma") {
+                if (state.cooldowns.magmaWalker <= 0) {
+                    handleMagmaWalker(player);
+                    state.cooldowns.magmaWalker = MAGMA_WALKER_COOLDOWN;
+                } else {
+                    state.cooldowns.magmaWalker--;
+                }
             }
         } catch (e) {
             log(`HighFreq error: ${e}`);

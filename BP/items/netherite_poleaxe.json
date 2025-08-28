@@ -16,7 +16,11 @@
         "max_durability": 2000
       },
       "minecraft:damage": 12,
-      "minecraft:icon": "arw_netherite_poleaxe",
+      "minecraft:icon": {
+        "textures": {
+          "default": "arw_netherite_poleaxe"
+        }
+      },
       "minecraft:display_name": {
         "value": "§6Netherite Poleaxe"
       },

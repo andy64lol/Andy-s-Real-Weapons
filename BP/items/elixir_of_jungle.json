@@ -8,7 +8,11 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": "elixir_of_the_jungle",
+			"minecraft:icon": {
+				"textures": {
+					"default": "elixir_of_the_jungle"
+				}
+			},
 			"minecraft:display_name": {
 				"value": "Elixir of the Jungle"
 			},

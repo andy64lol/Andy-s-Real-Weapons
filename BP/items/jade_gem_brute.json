@@ -9,7 +9,11 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": "arw_jade_gem_brute",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_jade_gem_brute"
+				}
+			},
 			"minecraft:stacked_by_data": true,
 			"minecraft:max_stack_size": 64
 		}

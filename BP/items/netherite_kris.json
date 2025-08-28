@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 1985
 			},
-			"minecraft:icon": "arw_netherite_kris",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_netherite_kris"
+				}
+			},
 			"minecraft:damage": 9,
 			"minecraft:enchantable": {
 				"value": 16,

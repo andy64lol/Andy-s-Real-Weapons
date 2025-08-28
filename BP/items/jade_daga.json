@@ -16,7 +16,11 @@
         "max_durability": 53
       },
       "minecraft:damage": 8,
-      "minecraft:icon": "arw_jade_daga",
+      "minecraft:icon": {
+        "textures": {
+          "default": "arw_jade_daga"
+        }
+      },
       "minecraft:display_name": {
         "value": "§aJade Daga"
       },

@@ -9,7 +9,11 @@
       }
     },
     "components": {
-      "minecraft:icon": "arw_cursed_netherite_ingot"
+      "minecraft:icon": {
+        "textures": {
+          "default": "arw_cursed_netherite_ingot"
+        }
+      }
       
       
     }

@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 40
 			},
-			"minecraft:icon": "arw_flint_daga",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_flint_daga"
+				}
+			},
 			"minecraft:damage": 3,
 			"minecraft:enchantable": {
 				"value": 10,

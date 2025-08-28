@@ -15,7 +15,11 @@
       "minecraft:durability": {
         "max_durability": 600
       },
-      "minecraft:icon": "arw_steel_katana",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_steel_katana"
+				}
+			},
       "minecraft:damage": 9,
       "minecraft:enchantable": {
         "value": 16,

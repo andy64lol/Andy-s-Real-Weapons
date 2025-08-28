@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 160
 			},
-			"minecraft:icon": "arw_gold_kris",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_gold_kris"
+				}
+			},
 			"minecraft:damage": 6,
 			"minecraft:enchantable": {
 				"value": 25,

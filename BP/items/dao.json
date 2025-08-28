@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 312
 			},
-			"minecraft:icon": "arw_dao",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_dao"
+				}
+			},
 			"minecraft:damage": 7,
 			"minecraft:enchantable": {
 				"value": 18,

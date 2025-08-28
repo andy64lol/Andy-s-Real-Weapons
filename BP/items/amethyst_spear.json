@@ -15,7 +15,11 @@
       "minecraft:durability": {
         "max_durability": 400
       },
-      "minecraft:icon": "arw_amethyst_spear",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_amethyst_spear"
+				}
+			},
       "minecraft:damage": 8,
       "minecraft:enchantable": {
         "value": 22,

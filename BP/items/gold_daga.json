@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 30
 			},
-			"minecraft:icon": "arw_gold_daga",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_gold_daga"
+				}
+			},
 			"minecraft:damage": 4,
 			"minecraft:enchantable": {
 				"value": 22,

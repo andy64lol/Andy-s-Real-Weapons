@@ -15,7 +15,11 @@
       "minecraft:durability": {
         "max_durability": 500
       },
-      "minecraft:icon": "arw_steel_spear",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_steel_spear"
+				}
+			},
       "minecraft:damage": 7,
       "minecraft:enchantable": {
         "value": 10,

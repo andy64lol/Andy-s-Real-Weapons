@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 3900
 			},
-			"minecraft:icon": "arw_shogun_katana",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_shogun_katana"
+				}
+			},
 			"minecraft:damage": 12,
 			"minecraft:enchantable": {
 				"value": 28,

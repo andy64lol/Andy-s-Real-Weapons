@@ -9,7 +9,11 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": "arw_steel_ingot"
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_steel_ingot"
+				}
+			}
 		}
 	}
 }

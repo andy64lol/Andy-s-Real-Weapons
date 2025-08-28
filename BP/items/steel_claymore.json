@@ -15,7 +15,11 @@
       "minecraft:durability": {
         "max_durability": 304
       },
-      "minecraft:icon": "arw_steel_claymore",
+      "minecraft:icon": {
+        "textures": {
+          "default": "arw_steel_claymore"
+        }
+      },
       "minecraft:damage": 8,
       "minecraft:enchantable": {
         "value": 14,

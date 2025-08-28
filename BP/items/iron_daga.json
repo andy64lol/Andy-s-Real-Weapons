@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 200
 			},
-			"minecraft:icon": "arw_iron_daga",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_iron_daga"
+				}
+			},
 			"minecraft:damage": 5,
 			"minecraft:enchantable": {
 				"value": 12,

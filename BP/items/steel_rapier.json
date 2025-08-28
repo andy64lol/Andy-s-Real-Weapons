@@ -15,7 +15,11 @@
 			"minecraft:durability": {
 				"max_durability": 320
 			},
-			"minecraft:icon": "arw_steel_rapier",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_steel_rapier"
+				}
+			},
 			"minecraft:damage": 7,
 			"minecraft:enchantable": {
 				"value": 16,

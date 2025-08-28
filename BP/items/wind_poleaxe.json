@@ -14,7 +14,11 @@
 			"minecraft:durability": {
 				"max_durability": 580
 			},
-			"minecraft:icon": "arw_wind_poleaxe",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_wind_poleaxe"
+				}
+			},
 			"minecraft:attack": {
 				"damage": 7,
 				"cooldown_ticks": 10

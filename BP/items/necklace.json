@@ -2,13 +2,17 @@
 	"format_version": "1.21.100",
 	"minecraft:item": {
 		"description": {
-			"identifier": "arw:empty_necklace",	
+			"identifier": "arw:empty_necklace",
 			"menu_category": {
 				"category": "equipment"
 			}
 		},
 		"components": {
-			"minecraft:icon": "arw_empty_necklace",
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_empty_necklace"
+				}
+			},
 			"minecraft:wearable": {
 				"slot": "slot.weapon.offhand"
 			},

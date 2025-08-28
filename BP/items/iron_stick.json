@@ -8,7 +8,11 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": "arw_iron_stick"
+			"minecraft:icon": {
+				"textures": {
+					"default": "arw_iron_stick"
+				}
+			}
 		}
 	}
 }

@@ -17,7 +17,7 @@
         "item": "arw:steel_ingot"
       },
       "B": {
-        "item": "arw:steel_block"
+        "item": "minecraft:iron_block"
       },
       "T": {
         "item": "minecraft:stick"

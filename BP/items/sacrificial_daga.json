@@ -42,7 +42,7 @@
         ]
       },
       "minecraft:display_name": {
-        "value": "§5Sacrificial Daga"
+        "value": "item.arw:sacrificial_daga"
       },
       "minecraft:lore": [
         "§7A daga made using lost souls,",

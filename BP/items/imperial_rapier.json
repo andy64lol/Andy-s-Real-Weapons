@@ -48,7 +48,7 @@
         ]
       },
       "minecraft:display_name": {
-        "value": "§6Imperial rapier"
+        "value": "item.arw.imperial_rapier.name"
       },
       "minecraft:lore": [
         "§7A finely crafted blade,",

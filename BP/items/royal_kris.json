@@ -48,7 +48,7 @@
         ]
       },
       "minecraft:display_name": {
-        "value": "§eRoyal Kris"
+        "value": "item.arw:royal_kris"
       },
       "minecraft:lore": [
         "§dForged with precious emeralds and golden handle.",

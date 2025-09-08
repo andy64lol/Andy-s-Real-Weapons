@@ -14,7 +14,7 @@
 				}
 			},
 			"minecraft:display_name": {
-				"value": "Elixir of the Jungle"
+				"value": "item.arw:elixir_of_jungle"
 			},
 			"minecraft:max_stack_size": 1
 		}

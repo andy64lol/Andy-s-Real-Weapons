@@ -17,7 +17,7 @@
 				"slot": "slot.weapon.offhand"
 			},
 			"minecraft:display_name": {
-				"value": "Necklace of the Breeze"
+				"value": "item.arw:necklace_of_breeze"
 			},
 			"minecraft:equippable": {
 				"slot": "slot.offhand"

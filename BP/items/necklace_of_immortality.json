@@ -17,7 +17,7 @@
 				"slot": "slot.weapon.offhand"
 			},
 			"minecraft:display_name": {
-				"value": "Necklace of the Immortal"
+				"value": "item.arw:necklace_of_immortality"
 			},
 			"minecraft:equippable": {
 				"slot": "slot.offhand"

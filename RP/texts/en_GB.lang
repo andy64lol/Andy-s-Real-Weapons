@@ -2,11 +2,7 @@ item.arw:steel_poleaxe=Steel Poleaxe
 item.arw:flint_spear=Flint Spear
 item.arw:amethyst_spear=Amethyst Spear
 item.arw:steel_spear=Steel Spear
-tile.arw:jade_mineral.name=Jade Mineral
-item.arw:jade_gem_brute=Raw Jade
-item.arw:jade_gem=Jade Gem
-item.arw:jade_daga=Jade Daga
-item.arw:jade_daga_dull=Unpolished Jade Daga
+
 item.arw:steel_claymore=Steel Claymore
 item.arw:iron_claymore=Iron Claymore
 item.arw:iron_rapier=Iron Rapier
@@ -28,7 +24,7 @@ item.arw:diamond_katana=Diamond Katana
 item.arw:steel_katana=Steel Katana
 item.arw:iron_katana=Iron Katana
 item.arw:netherite_poleaxe=Netherite Poleaxe
-item.arw:steel_block=Steel Block
+
 item.arw:shogun_katana=Shogun's Katana
 item.arw:dao=Dao
 item.arw:qiang=Qiang

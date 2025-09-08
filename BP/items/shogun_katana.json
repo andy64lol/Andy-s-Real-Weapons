@@ -61,7 +61,7 @@
 				]
 			},
 			"minecraft:display_name": {
-				"value": "§6Katana of the great shogun"
+				"value": "item.arw:shogun_katana"
 			},
 			"minecraft:lore": [
 				"§7This blade is possessed by the soul of Shogun Takeshiyuki,",

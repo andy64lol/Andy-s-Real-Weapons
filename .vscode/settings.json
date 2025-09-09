@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "daga"
-    ],
   "files.exclude": {
     "**/builds/dev/**": true
   }

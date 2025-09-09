@@ -1,8 +1,3 @@
-# Reset scoreboard for rapier
 scoreboard players set @a sacred_weapon 0
-
-# Detect Imperial Rapier in mainhand
 execute as @a[hasitem={item=arw:imperial_rapier,location=slot.weapon.mainhand}] run scoreboard players set @s sacred_weapon 1
-
-# Call power function
 function arw/give_rapier_power

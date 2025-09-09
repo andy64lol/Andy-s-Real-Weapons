@@ -1,6 +1,9 @@
 {
 	"values": [
 		"arw/check_katana",
-		"arw/check_necklace"
+		"arw/check_necklace",
+		"arw/check_poleaxe",
+		"arw/check_rapier",
+		"arw/check_amethyst_spear"
 	]
 }

@@ -1,5 +1,6 @@
 {
 	"values": [
+		"loader",
 		"check_katana",
 		"check_necklace",
 		"check_poleaxe",

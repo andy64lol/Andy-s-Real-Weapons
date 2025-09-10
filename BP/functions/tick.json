@@ -6,6 +6,9 @@
 		"check_poleaxe",
 		"check_rapier",
 		"check_amethyst_spear",
-		"check_sacrificial_daga"
+		"check_sacrificial_daga",
+		"check_dao",
+		"check_qiang",
+		"check_royal_kris"
 	]
 }

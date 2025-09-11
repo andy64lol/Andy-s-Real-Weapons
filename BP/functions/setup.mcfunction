@@ -13,5 +13,3 @@ scoreboard objectives add royalkris dummy
 
 # Mark setup as done using a fake player
 scoreboard players set setup_flag setup 1
-
-say "Thanks for playing my first ever addon! Hope you enjoy it!"

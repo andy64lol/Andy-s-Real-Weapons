@@ -4,7 +4,9 @@
 		"description": {
 			"identifier": "arw:necklace"
 		},
-		"tags": [],
+		"tags": [
+			"crafting_table"
+		],
 		"pattern": [
 			" GG",
 			"G G",

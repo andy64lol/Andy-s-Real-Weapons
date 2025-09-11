@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:recipe_brewing_mix": {
+		"description": {
+			"identifier": "arw:brew_elixir_of_magma"
+		},
+		"tags": [],
+		"input": "minecraft:potion",
+		"reagent": "minecraft:magma_cream",
+		"output": "arw:elixir_of_magma",
+		"unlock": {
+			"context": "minecraft:recipe",
+			"criteria": {
+				"item": "minecraft:brewing_stand"
+			}
+		}
+	}
+}

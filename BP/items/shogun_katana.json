@@ -60,9 +60,6 @@
 					"minecraft:is_tool"
 				]
 			},
-			"minecraft:display_name": {
-				"value": "item.arw:shogun_katana"
-			},
 			"minecraft:lore": [
 				"§7This blade is possessed by the soul of Shogun Takeshiyuki,",
 				"§7his spirit forever bound within its steel.",

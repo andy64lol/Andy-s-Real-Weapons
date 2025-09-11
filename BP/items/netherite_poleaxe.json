@@ -21,9 +21,6 @@
           "default": "arw_netherite_poleaxe"
         }
       },
-      "minecraft:display_name": {
-        "value": "§6Netherite Poleaxe"
-      },
       "minecraft:enchantable": {
         "slot": "sword",
         "value": 14

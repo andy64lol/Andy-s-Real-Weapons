@@ -2,11 +2,7 @@ item.arw:steel_poleaxe=Hacha de asta larga de acero
 item.arw:flint_spear=Lanza de pedernal
 item.arw:amethyst_spear=Lanza de amatista
 item.arw:steel_spear=Lanza de acero
-tile.arw:jade_mineral.name=Mineral de jade
-item.arw:jade_gem_brute=Jade en bruto
-item.arw:jade_gem=Gema de jade
-item.arw:jade_daga=Daga de jade
-item.arw:jade_daga_dull=Daga de jade sin pulir
+
 item.arw:steel_claymore=Claymore de acero
 item.arw:iron_claymore=Claymore de fierro
 item.arw:iron_rapier=Estoque de fierro
@@ -28,7 +24,7 @@ item.arw:diamond_katana=Katana de diamante
 item.arw:steel_katana=Katana de acero
 item.arw:iron_katana=Katana de fierro
 item.arw:netherite_poleaxe=Hacha de asta larga de netherita
-item.arw:steel_block=Bloque de acero
+
 item.arw:shogun_katana=Katana del shogun
 item.arw:dao=Dao
 item.arw:qiang=Qiang
@@ -42,5 +38,3 @@ item.arw:necklace_of_magma=Collar de magma
 item.arw:elixir_of_breeze=Elixir de la brisa
 item.arw:necklace_of_breeze=Collar de la brisa
 item.arw:wind_poleaxe=Hacha de asta larga del viento
-tile.arw:jade_ore.name=Mena de jade
-tile.arw:steel_block.name=Bloque de acero

@@ -41,9 +41,6 @@
           "minecraft:is_tool"
         ]
       },
-      "minecraft:display_name": {
-        "value": "item.arw:sacrificial_daga"
-      },
       "minecraft:lore": [
         "§7A daga made using lost souls,",
         "§7cursed for eternity,",

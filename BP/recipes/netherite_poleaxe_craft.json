@@ -30,7 +30,7 @@
 		"unlock": {
 			"context": "player",
 			"recipes": [
-				"arw:netherite_poleaxe_craft"
+				"arw:netherite_poleaxe_recipe"
 			],
 			"items": [
 				"minecraft:netherite_ingot",

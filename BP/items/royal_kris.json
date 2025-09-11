@@ -47,9 +47,6 @@
           "minecraft:is_tool"
         ]
       },
-      "minecraft:display_name": {
-        "value": "item.arw:royal_kris"
-      },
       "minecraft:lore": [
         "§dForged with precious emeralds and golden handle.",
         "§7An elegant blade for those of noble blood."

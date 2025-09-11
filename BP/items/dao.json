@@ -41,9 +41,6 @@
 					}
 				]
 			},
-			"minecraft:display_name": {
-				"value": "item.arw:dao"
-			},
 			"minecraft:lore": [
 				"§7It was once said it was forged and designed by an old blacksmith near the mountains and used during several rebellions."
 			],

@@ -6,20 +6,17 @@
 		},
 		"tags": ["crafting_table"],
 		"key": {
-			"H": {
-				"item": "minecraft:heavy_core"
-			},
-			"B": {
-				"item": "minecraft:breeze_rod"
+			"W": {
+				"item": "minecraft:wind_charge"
 			},
 			"S": {
-				"item": "arw:steel_ingot"
+				"item": "arw:iron_stick"
 			}
 		},
 		"pattern": [
-			" HS",
-			" BS",
-			"B "
+			" SW",
+			" SW",
+			"S  "
 		],
 		"result": {
 			"item": "arw:wind_poleaxe",

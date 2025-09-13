@@ -30,7 +30,7 @@ item.arw:dao=Dao
 item.arw:qiang=Qiang
 item.arw:elixir_of_inmortality=Elixir de inmortalidad
 item.arw:necklace_of_inmortality=Collar de inmortalidad
-item.arw:necklace=Collar
+item.arw.empty_necklaceCollar
 item.arw:elixir_of_jungle=Elixir de la selva
 item.arw:necklace_of_jungle=Collar de la selva
 item.arw:elixir_of_magma=Elixir de magma

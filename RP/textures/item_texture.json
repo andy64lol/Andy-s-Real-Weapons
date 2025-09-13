@@ -62,18 +62,6 @@
 		"arw_steel_spear": {
 			"textures": "textures/items/steel_spear"
 		},
-		"arw_jade_gem_brute": {
-			"textures": "textures/items/jade_gem_brute"
-		},
-		"arw_jade_gem": {
-			"textures": "textures/items/jade_gem"
-		},
-		"arw_jade_daga": {
-			"textures": "textures/items/jade_daga"
-		},
-		"arw_jade_daga_dull": {
-			"textures": "textures/items/jade_daga_dull"
-		},
 		"arw_steel_claymore": {
 			"textures": "textures/items/steel_claymore"
 		},
@@ -133,9 +121,6 @@
 		},
 		"arw_wind_poleaxe": {
 			"textures": "textures/items/wind_poleaxe"
-		},
-		"arw_jade_staff": {
-			"textures": "textures/items/jade_staff"
 		}
 	}
 }

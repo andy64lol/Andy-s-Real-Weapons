@@ -121,6 +121,9 @@
 		},
 		"arw_wind_poleaxe": {
 			"textures": "textures/items/wind_poleaxe"
+		},
+		"arw_ender_pearl_earrings": {
+			"textures": "textures/items/ender_pearl_earrings"
 		}
 	}
 }

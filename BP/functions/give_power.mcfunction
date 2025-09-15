@@ -46,7 +46,7 @@ effect @a[scores={mainhand=10}] mining_fatigue 10 2 true
 execute as @a[scores={mainhand=11}] at @s run effect @e[type=!player,r=5] weakness 3 1 true
 
 # Qiang effects
-execute as @a[scores={mainhand=12}] run effect @e[type=!player,r=5] weakness 3 1 true
+execute as @a[scores={mainhand=12}] at @s run effect @e[type=!player,r=5] weakness 3 1 true
 
 # Royal kris effects
 effect @a[scores={mainhand=13}] speed 2 1 true
@@ -66,9 +66,9 @@ effect @a[scores={offhand=4}] strength 2 0 true
 
 # Ender pearl earrings
 
-execute as @a[scores={head=1..}] at @s run particle minecraft:dragon_breath_fire ~ ~1 ~ 0.5 0.5 0.5 0 3
-execute as @a[scores={head=1..}] at @s run particle minecraft:end_chest ~ ~1 ~ 1 1 1 0 40
+execute as @a[scores={head=1..}] at @s run particle minecraft:end_chest ~ ~1 ~
 effect @a[scores={head=1..}] night_vision 1 0 true
-effect @a[scores={head=1..}] jump_boost 9 0 true
-effect @a[scores={head=1..}] speed 9 1 true
+effect @a[scores={head=1..}] slow_falling 34 2 true
+effect @a[scores={head=1..}] jump_boost 34 10 true
+effect @a[scores={head=1..}] speed 21 10 true
 effect @a[scores={head=1..}] invisibility 1 10 true

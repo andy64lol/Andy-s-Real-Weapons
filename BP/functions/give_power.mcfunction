@@ -54,6 +54,16 @@ effect @a[scores={mainhand=13}] strength 2 1 true
 effect @a[scores={mainhand=13}] resistance 2 0 true
 effect @a[scores={mainhand=13}] jump_boost 2 0 true
 
+# Claymore effects
+effect @a[scores={mainhand=14}] slowness 3 1 true
+effect @a[scores={mainhand=14,offhand=0}] resistance 4 0 true
+effect @a[scores={mainhand=15}] slowness 5 1 true
+effect @a[scores={mainhand=15,offhand=0}] resistance 7 1 true
+effect @a[scores={mainhand=16}] slowness 7 1 true
+effect @a[scores={mainhand=16,offhand=0}] resistance 10
+effect @a[scores={mainhand=14..15,offhand=1..}] weakness 3 0 true
+effect @a[scores={mainhand=16,offhand=1..}] weakness 6 0 true
+
 # Necklace effects
 effect @a[scores={offhand=1}] jump_boost 2 0 true
 effect @a[scores={offhand=1}] speed 2 0 true
@@ -64,11 +74,15 @@ effect @a[scores={offhand=3}] speed 2 0 true
 effect @a[scores={offhand=4}] fire_resistance 2 0 true
 effect @a[scores={offhand=4}] strength 2 0 true
 
-# Ender pearl earrings
+# Hero's banner effects
+
+effect @a[scores={offhand=11}] resistance 1 0 true
+effect @a[scores={offhand=11}] regeneration 1 0 true
+effect @a[scores={offhand=11}] speed 1 0 true
+effect @a[scores={offhand=11}] village_hero 1 0 true
+
+# Ender pearl earrings effects
 
 execute as @a[scores={head=1..}] at @s run particle minecraft:end_chest ~ ~1 ~
 effect @a[scores={head=1..}] night_vision 1 0 true
-effect @a[scores={head=1..}] slow_falling 34 2 true
-effect @a[scores={head=1..}] jump_boost 34 10 true
-effect @a[scores={head=1..}] speed 21 10 true
 effect @a[scores={head=1..}] invisibility 1 10 true

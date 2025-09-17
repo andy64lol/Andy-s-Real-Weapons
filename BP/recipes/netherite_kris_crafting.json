@@ -25,7 +25,6 @@
 			"count": 1
 		},
 		"unlock": {
-			"context": "player",
 			"recipes": [
 				"arw:netherite_kris_recipe"
 			],

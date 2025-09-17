@@ -1,0 +1,25 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "tags": [
+            "crafting_table"
+        ],
+        "description": {
+            "identifier": "arw:steel_chestplate_crafting"
+        },
+        "key": {
+            "S": {
+                "item": "arw:steel_ingot"
+            }
+        },
+        "pattern": [
+            "S S",
+            "SSS",
+            "SSS"
+        ],
+        "result": {
+            "item": "arw:steel_chestplate",
+            "count": 1
+        }
+    }
+}

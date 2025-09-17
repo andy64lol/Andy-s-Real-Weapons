@@ -24,7 +24,6 @@
 			"count": 1
 		},
 		"unlock": {
-			"context": "player",
 			"recipes": [
 				"arw:netherite_daga_recipe"
 			],

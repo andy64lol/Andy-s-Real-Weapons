@@ -124,6 +124,24 @@
 		},
 		"arw_ender_pearl_earrings": {
 			"textures": "textures/items/ender_pearl_earrings"
+		},
+		"arw_netherite_claymore": {
+			"textures": "textures/items/netherite_claymore"
+		},
+		"arw_steel_helmet": {
+			"textures": "textures/items/steel_helmet"
+		},
+		"arw_steel_chestplate": {
+			"textures": "textures/items/steel_chestplate"
+		},
+		"arw_steel_leggings": {
+			"textures": "textures/items/steel_leggings"
+		},
+		"arw_steel_boots": {
+			"textures": "textures/items/steel_boots"
+		},
+		"arw_banner_hero": {
+			"textures": "textures/items/hero_banner"
 		}
 	}
 }

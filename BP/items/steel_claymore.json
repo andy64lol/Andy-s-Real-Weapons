@@ -20,7 +20,7 @@
           "default": "arw_steel_claymore"
         }
       },
-      "minecraft:damage": 8,
+      "minecraft:damage": 12,
       "minecraft:enchantable": {
         "value": 14,
         "slot": "sword"

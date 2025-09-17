@@ -19,10 +19,7 @@
 					"default": "arw_wind_poleaxe"
 				}
 			},
-			"minecraft:attack": {
-				"damage": 7,
-				"cooldown_ticks": 10
-			},
+			"minecraft:damage": 13,
 			"minecraft:enchantable": {
 				"value": 20,
 				"slot": "sword"

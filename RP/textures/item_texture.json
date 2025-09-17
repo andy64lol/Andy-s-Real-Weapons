@@ -142,6 +142,18 @@
 		},
 		"arw_banner_hero": {
 			"textures": "textures/items/hero_banner"
+		},
+		"arw_sacred_knight_helmet": {
+			"textures": "textures/items/sacred_knight_helmet"
+		},
+		"arw_sacred_knight_chestplate": {
+			"textures": "textures/items/sacred_knight_chestplate"
+		},
+		"arw_sacred_knight_leggings": {
+			"textures": "textures/items/sacred_knight_leggings"
+		},
+		"arw_sacred_knight_boots": {
+			"textures": "textures/items/sacred_knight_boots"
 		}
 	}
 }

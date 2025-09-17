@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:sacred_chestplate"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"H": {
+				"item": "arw:steel_chestplate"
+			},
+			"A": {
+				"item": "minecraft:gold_ingot"
+			},
+			"R": {
+				"item": "minecraft:red_wool"
+			}
+		},
+		"pattern": [
+			"ARA",
+			"AHA",
+			"AAA"
+		],
+		"result": {
+			"count": 1,
+			"item": "arw:sacred_knight_chestplate"
+		}
+	}
+}

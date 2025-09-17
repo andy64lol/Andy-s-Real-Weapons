@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:sacred_boots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"H": {
+				"item": "arw:steel_boots"
+			},
+			"A": {
+				"item": "minecraft:gold_ingot"
+			}
+		},
+		"pattern": [
+			"AAA",
+			"AHA",
+			"AAA"
+		],
+		"result": {
+			"count": 1,
+			"item": "arw:sacred_knight_boots"
+		}
+	}
+}

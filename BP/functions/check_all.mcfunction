@@ -29,4 +29,11 @@ execute as @a[hasitem={item=minecraft:nautilus_shell,location=slot.weapon.offhan
 execute as @a[hasitem={item=arw:banner_hero,location=slot.weapon.offhand}] run scoreboard players set @s offhand 11
 scoreboard players set @a head 0
 execute as @a[hasitem={item=arw:ender_pearl_earrings,location=slot.armor.head}] run scoreboard players set @s head 1
+execute as @a[hasitem={item=arw:sacred_knight_helmet,location=slot.armor.head}] run scoreboard players set @s head 2
+scoreboard players set @a chestplate 0
+execute as @a[hasitem={item=arw:sacred_knight_chestplate,location=slot.armor.chest}] run scoreboard players set @s chestplate 1
+scoreboard players set @a leggings 0
+execute as @a[hasitem={item=arw:sacred_knight_leggings,location=slot.armor.legs}] run scoreboard players set @s leggings 1
+scoreboard players set @a boots 0
+execute as @a[hasitem={item=arw:sacred_knight_boots,location=slot.armor.feet}] run scoreboard players set @s boots 1
 function give_power

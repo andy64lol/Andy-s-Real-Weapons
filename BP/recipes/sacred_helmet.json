@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "arw:sacred_helmet"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"H": {
+				"item": "arw:steel_helmet"
+			},
+			"A": {
+				"item": "minecraft:gold_ingot"
+			},
+			"N": {
+				"item": "minecraft:netherite_ingot"
+			}
+		},
+		"pattern": [
+			"AAA",
+			"NHN",
+			"AAA"
+		],
+		"result": {
+			"count": 1,
+			"item": "arw:sacred_knight_helmet"
+		}
+	}
+}

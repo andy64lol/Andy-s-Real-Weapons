@@ -69,6 +69,15 @@ effect @a[scores={offhand=11}] resistance 1 0 true
 effect @a[scores={offhand=11}] regeneration 1 0 true
 effect @a[scores={offhand=11}] speed 1 0 true
 effect @a[scores={offhand=11}] village_hero 1 0 true
+# Conduit amulet effects
+effect @a[scores={offhand=12}] water_breathing 1 0 true
+effect @a[scores={offhand=12}] night_vision 1 0 true
+effect @a[scores={offhand=12,mainhand=17}] speed 1 0 true
+effect @a[scores={offhand=12,mainhand=17}] haste 1 0 true
+effect @a[scores={offhand=12,mainhand=17}] conduit_power 1 0 true
+execute as @a[scores={offhand=12}] at @s run particle minecraft:conduit_attack_emitter ~ ~1 ~
+execute as @a[scores={offhand=12,mainhand=17}] at @s run particle minecraft:conduit_particle ~ ~1 ~
+execute as @a[scores={offhand=12,mainhand=17}] at @s run particle minecraft:conduit_absorb_particle ~ ~1 ~
 # Ender pearl earrings effects
 execute as @a[scores={head=1}] at @s run particle minecraft:end_chest ~ ~1 ~
 effect @a[scores={head=1}] night_vision 1 0 true
@@ -77,9 +86,6 @@ effect @a[scores={head=1}] invisibility 1 10 true
 effect @a[scores={head=2}] night_vision 0 0 true
 effect @a[scores={chestplate=1}] resistance 6 0 true
 effect @a[scores={chestplate=1}] regeneration 2 0 true
+effect @a[scores={chestplate=1}] health_boost 2 1 true
 effect @a[scores={leggings=1}] speed 2 1 true
 effect @a[scores={boots=1}] slow_falling 1 0 true
-execute as @a[scores={head=2,chestplate=1,leggings=1,boots=1,offhand=11}] at @s run effect @e[family=pillager] weakness 5 1 true
-execute as @a[scores={head=2,chestplate=1,leggings=1,boots=1,offhand=11}] at @s run effect @e[family=pillager] slowness 5 1 true
-execute as @a[scores={head=2,chestplate=1,leggings=1,boots=1,mainhand=8}] at @s run effect @e[family=irongolem] strength 5 1 true
-execute as @a[scores={head=2,chestplate=1,leggings=1,boots=1,mainhand=8}] at @s run effect @e[family=irongolem] regeneration 5 1 true

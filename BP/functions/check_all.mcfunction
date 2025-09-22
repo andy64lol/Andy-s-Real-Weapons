@@ -15,6 +15,7 @@ execute as @a[hasitem={item=arw:royal_kris,location=slot.weapon.mainhand}] run s
 execute as @a[hasitem={item=arw:steel_claymore,location=slot.weapon.mainhand}] run scoreboard players set @s mainhand 14
 execute as @a[hasitem={item=arw:iron_claymore,location=slot.weapon.mainhand}] run scoreboard players set @s mainhand 15
 execute as @a[hasitem={item=arw:netherite_claymore,location=slot.weapon.mainhand}] run scoreboard players set @s mainhand 16
+execute as @a[hasitem={item=minecraft:trident,location=slot.weapon.mainhand}] run scoreboard players set @s mainhand 17
 scoreboard players set @a offhand 0
 execute as @a[hasitem={item=arw:necklace_of_breeze,location=slot.weapon.offhand}] run scoreboard players set @s offhand 1
 execute as @a[hasitem={item=arw:necklace_of_immortality,location=slot.weapon.offhand}] run scoreboard players set @s offhand 2
@@ -27,6 +28,7 @@ execute as @a[hasitem={item=minecraft:totem_of_undying,location=slot.weapon.offh
 execute as @a[hasitem={item=minecraft:filled_map,location=slot.weapon.offhand}] run scoreboard players set @s offhand 9
 execute as @a[hasitem={item=minecraft:nautilus_shell,location=slot.weapon.offhand}] run scoreboard players set @s offhand 10
 execute as @a[hasitem={item=arw:banner_hero,location=slot.weapon.offhand}] run scoreboard players set @s offhand 11
+execute as @a[hasitem={item=arw:conduit_amulet,location=slot.weapon.offhand}] run scoreboard players set @s offhand 12
 scoreboard players set @a head 0
 execute as @a[hasitem={item=arw:ender_pearl_earrings,location=slot.armor.head}] run scoreboard players set @s head 1
 execute as @a[hasitem={item=arw:sacred_knight_helmet,location=slot.armor.head}] run scoreboard players set @s head 2

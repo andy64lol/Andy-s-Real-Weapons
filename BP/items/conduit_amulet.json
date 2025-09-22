@@ -1,0 +1,19 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "arw:conduit_amulet",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "arw_conduit_amulet",
+			"minecraft:wearable": {
+				"protection": 3,
+				"slot": "slot.weapon.offhand"
+			},
+			"minecraft:glint": true
+		}
+	}
+}

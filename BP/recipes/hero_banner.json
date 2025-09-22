@@ -1,0 +1,37 @@
+{
+    "format_version": "1.20.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "arw:hero_banner_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "SSS",
+            "SBS",
+            " L "
+        ],
+        "key": {
+            "S": {
+                "item": "minecraft:white_wool"
+            },
+            "B": {
+                "item": "minecraft:emerald"
+            },
+            "L": {
+                "item": "minecraft:stick"
+            }
+        },
+        "result": {
+            "item": "arw:banner_hero",
+            "count": 1
+        },
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:hero_banner_recipe"
+            ]
+        }
+    }
+}

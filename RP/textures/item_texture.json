@@ -157,6 +157,9 @@
 		},
 		"arw_jade_shard": {
 			"textures": "textures/items/jade_shard"
+		},
+		"arw_conduit_amulet": {
+			"textures": "textures/items/conduit_amulet"
 		}
 	}
 }

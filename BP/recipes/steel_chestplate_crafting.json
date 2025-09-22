@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.10",
+    "format_version": "1.20.90",
     "minecraft:recipe_shaped": {
         "tags": [
             "crafting_table"
@@ -9,7 +9,8 @@
         },
         "key": {
             "S": {
-                "item": "arw:steel_ingot"
+                "item": "arw:steel_ingot",
+                "count": 1
             }
         },
         "pattern": [
@@ -20,6 +21,12 @@
         "result": {
             "item": "arw:steel_chestplate",
             "count": 1
+        },
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:steel_chestplate_crafting"
+            ]
         }
     }
 }

@@ -2,26 +2,26 @@
 	"format_version": "1.20.90",
 	"minecraft:recipe_shapeless": {
 		"description": {
-			"identifier": "arw:infuse_necklace_of_jungle"
+			"identifier": "arw:infuse_necklace_of_breeze"
 		},
 		"tags": [
 			"crafting_table"
 		],
 		"ingredients": [
 			{
-				"item": "arw:elixir_of_the_jungle"
+				"item": "arw:elixir_of_breeze"
 			},
 			{
 				"item": "arw:empty_necklace"
 			}
 		],
 		"result": {
-			"item": "arw:necklace_of_jungle"
+			"item": "arw:necklace_of_breeze"
 		},
         "unlock": {
             "context": "arw:crafting_table",
             "recipes": [
-                "arw:infuse_necklace_of_jungle"
+                "arw:infuse_necklace_of_breeze"
             ]
         }
 	}

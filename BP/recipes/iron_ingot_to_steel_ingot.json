@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_furnace": {
 		"description": {
 			"identifier": "arw:iron_to_steel_ingot_upgrade"
@@ -9,11 +9,11 @@
 		],
 		"input": "minecraft:iron_ingot",
 		"output": "arw:steel_ingot",
-		"unlock": {
-			"context": "none",
-			"recipes": [
-				"arw:iron_to_steel_ingot_upgrade"
-			]
-		}
+        "unlock": {
+            "context": "arw:furnace",
+            "recipes": [
+                "arw:iron_to_steel_ingot_upgrade"
+            ]
+        }
 	}
 }

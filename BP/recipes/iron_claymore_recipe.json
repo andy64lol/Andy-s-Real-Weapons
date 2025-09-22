@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:iron_claymore_recipe"
@@ -27,15 +27,11 @@
 			"item": "arw:iron_claymore",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:iron_claymore_recipe"
-			],
-			"items": [
-				"minecraft:iron_ingot",
-				"arw:iron_stick"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:iron_claymore_recipe"
+            ]
+        }
 	}
 }

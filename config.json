@@ -9,7 +9,7 @@
 	"description": "This Add-on adds new weapons to the game.",
 	"experimentalGameplay": {
 		"creationOfCustomBiomes": false,
-		"upcomingCreatorFeatures": false,
+		"upcomingCreatorFeatures": true,
 		"experimentalCreatorCameraFeatures": false,
 		"enableGameTestFramework": true,
 		"dataDrivenJigsawStructures": false,

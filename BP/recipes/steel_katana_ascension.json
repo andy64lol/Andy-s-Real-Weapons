@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:steel_katana_ascension"
@@ -27,15 +27,11 @@
 			"item": "arw:shogun_katana",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:steel_katana_ascension"
-			],
-			"items": [
-				"arw:iron_katana",
-				"arw:steel_ingot"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:steel_katana_ascension"
+            ]
+        }
 	}
 }

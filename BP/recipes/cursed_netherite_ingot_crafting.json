@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:cursed_netherite_ingot_recipe"
@@ -10,7 +10,7 @@
 		"pattern": [
 			"SSS",
 			"SNS",
-			"SWS"
+			"SSS"
 		],
 		"key": {
 			"S": {
@@ -18,23 +18,17 @@
 			},
 			"N": {
 				"item": "minecraft:netherite_ingot"
-			},
-			"W": {
-				"item": "minecraft:nether_star"
 			}
 		},
 		"result": {
 			"item": "arw:cursed_netherite_ingot",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:cursed_netherite_ingot_recipe"
-			],
-			"items": [
-				"minecraft:netherite_ingot"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:cursed_netherite_ingot_recipe"
+            ]
+        }
 	}
 }

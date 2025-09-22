@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:wind_poleaxe_recipe"
@@ -22,16 +22,11 @@
 			"item": "arw:wind_poleaxe",
 			"count": 1
 		},
-		"unlock": {
-			"context": "none",
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"item": "minecraft:breeze_rod"
-					}
-				]
-			}
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:wind_poleaxe_recipe"
+            ]
+        }
 	}
 }

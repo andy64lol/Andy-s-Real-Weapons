@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:qiang_recipe"
@@ -27,16 +27,11 @@
 			"item": "arw:qiang",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:qiang_recipe"
-			],
-			"items": [
-				"arw:steel_ingot",
-				"minecraft:stick",
-				"minecraft:red_wool"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:qiang_recipe"
+            ]
+        }
 	}
 }

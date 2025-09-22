@@ -1,10 +1,12 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shapeless": {
 		"description": {
 			"identifier": "arw:infusion_necklace_inmortality"
 		},
-		"tags": [],
+		"tags": [
+			"crafting_table"
+		],
 		"ingredients": [
 			{
 				"item": "arw:elixir_of_immortality"
@@ -17,8 +19,11 @@
 			"item": "arw:necklace_of_immortality",
 			"count": 1
 		},
-		"unlock": {
-			"context": "None"
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:infusion_necklace_inmortality"
+            ]
+        }
 	}
 }

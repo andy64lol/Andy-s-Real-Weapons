@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:ender_pearl_earrings_craft"
@@ -26,6 +26,12 @@
 		"result": {
 			"count": 1,
 			"item": "arw:ender_pearl_earrings"
-		}
+		},
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:ender_pearl_earrings_craft"
+            ]
+        }
 	}
 }

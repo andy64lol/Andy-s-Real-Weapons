@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:netherite_poleaxe_recipe"
@@ -27,15 +27,11 @@
 			"item": "arw:netherite_poleaxe",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:netherite_poleaxe_recipe"
-			],
-			"items": [
-				"minecraft:netherite_ingot",
-				"arw:steel_poleaxe"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:netherite_poleaxe_recipe"
+            ]
+        }
 	}
 }

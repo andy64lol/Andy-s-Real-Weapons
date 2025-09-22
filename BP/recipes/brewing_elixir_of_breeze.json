@@ -1,12 +1,12 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.21.10",
 	"minecraft:recipe_brewing_mix": {
 		"description": {
 			"identifier": "arw:brew_elixir_of_breeze"
 		},
 		"tags": [],
 		"input": "minecraft:potion",
-		"reagent": "minecraft:feather",
+		"reagent": "minecraft:wind_charge",
 		"output": "arw:elixir_of_breeze",
 		"unlock": {
 			"context": "minecraft:recipe",

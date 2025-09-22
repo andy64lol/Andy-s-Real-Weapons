@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:netherite_daga_recipe"
@@ -23,14 +23,11 @@
 			"item": "arw:netherite_daga",
 			"count": 1
 		},
-		"unlock": {
-			"recipes": [
-				"arw:netherite_daga_recipe"
-			],
-			"items": [
-				"minecraft:netherite_ingot",
-				"arw:flint_daga"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:netherite_daga_recipe"
+            ]
+        }
 	}
 }

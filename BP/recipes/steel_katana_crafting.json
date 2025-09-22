@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:steel_katana_recipe"
@@ -24,15 +24,11 @@
 			"item": "arw:steel_katana",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:steel_katana_recipe"
-			],
-			"items": [
-				"arw:steel_ingot",
-				"minecraft:stick"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:steel_katana_recipe"
+            ]
+        }
 	}
 }

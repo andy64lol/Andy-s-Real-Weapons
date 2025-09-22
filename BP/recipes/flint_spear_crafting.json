@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:flint_spear_recipe"
@@ -27,16 +27,11 @@
 			"item": "arw:flint_spear",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:flint_spear_recipe"
-			],
-			"items": [
-				"minecraft:flint",
-				"minecraft:string",
-				"minecraft:stick"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:flint_spear_recipe"
+            ]
+        }
 	}
 }

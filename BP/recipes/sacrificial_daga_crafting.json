@@ -1,5 +1,5 @@
 {
-	"format_version": "1.21.100",
+	"format_version": "1.20.90",
 	"minecraft:recipe_shaped": {
 		"description": {
 			"identifier": "arw:sacrificial_daga_recipe"
@@ -27,14 +27,11 @@
 			"item": "arw:sacrificial_daga",
 			"count": 1
 		},
-		"unlock": {
-			"context": "player",
-			"recipes": [
-				"arw:sacrificial_daga_recipe"
-			],
-			"items": [
-				"arw:cursed_netherite_ingot"
-			]
-		}
+        "unlock": {
+            "context": "arw:crafting_table",
+            "recipes": [
+                "arw:sacrificial_daga_recipe"
+            ]
+        }
 	}
 }
